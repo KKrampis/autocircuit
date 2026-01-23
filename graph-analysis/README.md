@@ -110,11 +110,10 @@ python validate_hypotheses.py example1/graph_data.json
 
 ```bash
 # Get graph metadata
-curl -X GET "https://www.neuronpedia.org/api/graph/{MODEL}/{SLUG}" \
-  -H "x-api-key: YOUR_API_KEY"
+curl -X GET "https://www.neuronpedia.org/api/graph/{MODEL}/{SLUG}"
 
 # Download full graph data
-curl -s -X GET "{GRAPH_DATA_URL}" -o graph_data.json
+curl -s -X GET "{url}" -o ./tmp/graphs/model={model_Id}__slug={slug}.json
 ```
 
 ### 2. Run Circuit Analysis
