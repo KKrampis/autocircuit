@@ -123,7 +123,7 @@ curl -s -X GET "{url}" -o ./tmp/graphs/model={model_Id}__slug={slug}.json
 python circuit_analysis.py --graph_file {graph_file}
 
 # Identify hub nodes
-python analyze_hubs.py
+python analyze_hubs.py --graph_file {graph_file}
 
 # Sample features for validation
 python validate_hypotheses.py graph_data.json
