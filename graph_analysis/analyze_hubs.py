@@ -61,6 +61,8 @@ node_degrees.sort(key=lambda x: x['total_degree'], reverse=True)
 def fmt_influence(v: int | None) -> str:
     return f"{v:.3f}" if v is not None else "N/A"
 
+print("Influence N/A when node's feature_type is 'logit'")
+
 print("Top 20 Hub Nodes (by total degree):")
 print("="*80)
 for i, node in enumerate(node_degrees[:20], 1):
@@ -83,5 +85,3 @@ node_degrees.sort(key=lambda x: x['weighted_out'], reverse=True)
 for i, node in enumerate(node_degrees[:20], 1):
     print(f"{i:3d}. NodeId:{node['node_id']:<20} Layer:{node['layer']:<3} Ctx:{node['ctx_idx']:<3} "
           f"WeightedOut:{node['weighted_out']:<7.2f} Influence:{fmt_influence(node['influence'])}")
-    
-breakpoint()
