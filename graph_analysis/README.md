@@ -120,22 +120,54 @@ curl -s -X GET "{url}" -o ./tmp/graphs/model={model_Id}__slug={slug}.json
 
 ```bash
 # Analyze overall circuit structure
-python circuit_analysis.py --graph_file {graph_file}
+python -m graph_analysis.circuit_analysis --graph_file {graph_file}
 
 # Identify hub nodes
-python analyze_hubs.py --graph_file {graph_file}
+python -m graph_analysis.analyze_hubs --graph_file {graph_file}
 
 # Sample features for validation
-python validate_hypotheses.py graph_data.json
+
+# Hypothesis Name: Domain/Topic Features
+# Description: Scientific/biology domain context detectors
+# Location: L0-L2, Context position 1
+# Metric: Influence
+python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 0,1 1,1 2,1 -top_n 5 --metric influence
+
+# Hypothesis Name: Syntatic/Structural Features
+# Description: Definitional structure detectors ('X stands for Y')
+# Location: L1-L3, Context position 2-3
+# Metric: Influence
+python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 1,2 2,2 -top_n 3 --metric influence
+python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 2,3 3,3 -top_n 3 --metric influence
+
+# Hypothesis Name: Morphological Features
+# Description: Chemical prefix detectors ('deoxy-')
+# Location: L6-L10, Context position 4
+# Metric: Influence
+python graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 6,4 7,4 8,4 9,4 10,4 -top_n 5 --metric influence
+
+# Hypothesis Name: Integration Hub Features
+# Description: High in-degree nodes combining multiple evidence sources
+# Location: L23, Context position 6
+# Metric: In-Degree
+python graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 23,6 -top_n 5 --metric in_degree
+
+# Hypothesis Name: Token-Specific Boosting Features
+# Description: Features specifically boosting output token
+# Location: L25, Context position 6
+# Metric: Weight
+python graph_analysis.top_n_nodes.py --graph_file {graph_file} --layer_ctx 25,6 -top_n 5 --metric weight
 ```
 
 ### 3. Validate Hypotheses
 
 For each sampled feature:
-1. Look up on Neuronpedia: `https://neuronpedia.org/{MODEL}/{FEATURE_ID}`
+1. Look up on Neuronpedia: `https://neuronpedia.org/{MODEL}/{SOURCE}/{FEATURE_ID}`
 2. Check if activation patterns match predictions
 3. Document semantic interpretation
 4. Calculate confirmation rate
+
+To Do: Look up on Neuronpedia is broken: (1) what is the source value?, (2) should use a python file and only retrieve the relevant information.
 
 ---
 
