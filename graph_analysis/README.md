@@ -120,10 +120,10 @@ curl -s -X GET "{url}" -o ./tmp/graphs/model={model_Id}__slug={slug}.json
 
 ```bash
 # Analyze overall circuit structure
-python -m graph_analysis.circuit_analysis --graph_file {graph_file}
+python -m graph_analysis.circuit_analysis --graph_file {graph_file} --tasks print_metadata analyze_supernodes layer_transitions context_flow
 
 # Identify hub nodes
-python -m graph_analysis.analyze_hubs --graph_file {graph_file}
+python -m graph_analysis.analyze_hubs --graph_file {graph_file} --tasks total_degree weighted_in weighted_out
 
 # Sample features for validation
 

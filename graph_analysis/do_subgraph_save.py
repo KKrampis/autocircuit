@@ -4,32 +4,7 @@ import sys
 import argparse
 
 from .utils import load_graph_data
-from .api import create_subgraph_save_body, do_subgraph_save_post
-
-
-def print_summary(payload: dict):
-    """Print summary of supernode configuration."""
-    print("\n" + "="*80)
-    print("SUPERNODE CONFIGURATION SUMMARY")
-    print("="*80)
-
-    print(f"\nModel: {payload['modelId']}")
-    print(f"Graph Slug: {payload['slug']}")
-    print(f"Total Supernodes: {len(payload['supernodes'])}")
-    print(f"Pinned Nodes: {len(payload['pinnedIds'])}")
-    print(f"Pruning Threshold: {payload['pruningThreshold']}")
-    print(f"Density Threshold: {payload['densityThreshold']}")
-
-    # Show largest supernodes
-    print("\nLargest Supernodes by Node Count (Top 10):")
-    sorted_sn = sorted(payload['supernodes'],
-                       key=lambda s: len(s),
-                       reverse=True)
-    print("No | Supernode Label")
-    for i, sn in enumerate(sorted_sn[:10], 1):
-        print(f"  {i:02d}. {sn[0]}")
-
-    print("\n" + "="*80)
+from .api import create_subgraph_save_body, do_subgraph_save_post, print_subgraph_summary
 
 
 if __name__ == "__main__":
@@ -71,7 +46,7 @@ if __name__ == "__main__":
     payload = create_subgraph_save_body(metadata['scan'], metadata['slug'], args.subgraph_name, pruning_settings['node_threshold'], pruning_settings['edge_threshold'], pinnedIds, args.supernodes)
 
     # Print summary
-    print_summary(payload)
+    print_subgraph_summary(payload)
 
     # Save to file
     if args.output_file is not None:
