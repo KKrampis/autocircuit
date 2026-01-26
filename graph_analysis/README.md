@@ -158,10 +158,10 @@ python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 23,6 
 # Metric: Weight
 python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 25,6 -top_n 5 --metric weight
 
-python -m graph_analysis.create_supernodes --graph_file {graph_file} --subgraph_name {subgraph_name} --send --api_key {api_key} -s {supernode1} -s {supernode2} --extra_pinned_ids {extra_pinned_ids}
+python -m graph_analysis.do_subgraph_save --graph_file {graph_file} --subgraph_name {subgraph_name} --send --api_key {api_key} -s {supernode1} -s {supernode2} --extra_pinned_ids {extra_pinned_ids}
 ```
 
-`graph_analysis.create_supernodes` Note:
+`graph_analysis.do_subgraph_save` Note:
 - `-s` or `--supernode` Define one supernode per -s. First item is the supernode LABEL, followed by node IDs (space-separated). Can be repeated to add multiple supernodes. Example: -s 'LabelA' node1 node2 -s 'LabelB' node3
 - `--extra_pinned_ids` List of node IDs to pin that DO NOT belong to any supernode (space-separated). These are additional standalone pinned nodes. Example: --extra_pinned_ids nodeX nodeY
 
