@@ -9,7 +9,7 @@ import argparse
 
 # Load graph data
 parser = argparse.ArgumentParser(description='Analyze Neuronpedia circuit tracer graph in a JSON file')
-parser.add_argument('--graph_file', help='Path to the graph JSON file')
+parser.add_argument('--graph_file', help='Path to the graph JSON file', required=True)
 args = parser.parse_args()
 
 with open(args.graph_file, 'r') as f:

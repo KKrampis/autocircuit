@@ -144,20 +144,26 @@ python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 2,3 3
 # Description: Chemical prefix detectors ('deoxy-')
 # Location: L6-L10, Context position 4
 # Metric: Influence
-python graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 6,4 7,4 8,4 9,4 10,4 -top_n 5 --metric influence
+python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 6,4 7,4 8,4 9,4 10,4 -top_n 5 --metric influence
 
 # Hypothesis Name: Integration Hub Features
 # Description: High in-degree nodes combining multiple evidence sources
 # Location: L23, Context position 6
 # Metric: In-Degree
-python graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 23,6 -top_n 5 --metric in_degree
+python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 23,6 -top_n 5 --metric in_degree
 
 # Hypothesis Name: Token-Specific Boosting Features
 # Description: Features specifically boosting output token
 # Location: L25, Context position 6
 # Metric: Weight
-python graph_analysis.top_n_nodes.py --graph_file {graph_file} --layer_ctx 25,6 -top_n 5 --metric weight
+python -m graph_analysis.top_n_nodes --graph_file {graph_file} --layer_ctx 25,6 -top_n 5 --metric weight
+
+python -m graph_analysis.create_supernodes --graph_file {graph_file} --subgraph_name {subgraph_name} --send --api_key {api_key} -s {supernode1} -s {supernode2} --extra_pinned_ids {extra_pinned_ids}
 ```
+
+`graph_analysis.create_supernodes` Note:
+- `-s` or `--supernode` Define one supernode per -s. First item is the supernode LABEL, followed by node IDs (space-separated). Can be repeated to add multiple supernodes. Example: -s 'LabelA' node1 node2 -s 'LabelB' node3
+- `--extra_pinned_ids` List of node IDs to pin that DO NOT belong to any supernode (space-separated). These are additional standalone pinned nodes. Example: --extra_pinned_ids nodeX nodeY
 
 ### 3. Validate Hypotheses
 

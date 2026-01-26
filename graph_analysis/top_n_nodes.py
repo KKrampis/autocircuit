@@ -1,5 +1,5 @@
 import argparse
-from graph_analysis.utils import (
+from .utils import (
     load_graph_data,
     organize_nodes_by_layer_ctx,
     calculate_in_degree,
@@ -11,10 +11,10 @@ from graph_analysis.utils import (
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Get top-n nodes based on the node's metric from specific layers at specific context position.")
-    parser.add_argument('--graph_file', help='Path to the graph JSON file')
-    parser.add_argument('--layer_ctx', nargs='+', help='List of layer and context index pairs in the format layer,ctx_idx (e.g., 4,2 5,3)')
-    parser.add_argument('--top_n', type=int, default=5, help='Number of top nodes to retrieve')
-    parser.add_argument('--metric', choices=['influence', 'in_degree', 'weight'], required=True,)
+    parser.add_argument('--graph_file', help='Path to the graph JSON file', required=True)
+    parser.add_argument('--layer_ctx', nargs='+', help='List of layer and context index pairs in the format layer,ctx_idx (e.g., 4,2 5,3)', required=True)
+    parser.add_argument('--top_n', type=int, default=5, help='Number of top nodes to retrieve', required=True)
+    parser.add_argument('--metric', choices=['influence', 'in_degree', 'weight'], required=True)
     args = parser.parse_args()
     layer_ctx = []
     for pair in args.layer_ctx:
