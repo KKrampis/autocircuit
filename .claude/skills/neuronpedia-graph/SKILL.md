@@ -5,79 +5,27 @@ description: Analyze Neuronpedia attribution graphs to discover subgraphs and co
 
 # Neuronpedia Graph Analysis
 
-Analyze attribution graphs from Neuronpedia to discover computational circuits in LLMs.
+This is the entry point for graph analysis. Use the focused skills below based on your task.
 
-## Graph JSON Schema
+## Available Skills
 
-Graph files contain three main keys:
+| Skill | Use When |
+|-------|----------|
+| `np-graph-schema` | Understanding graph JSON structure |
+| `np-graph-analyze` | Analyzing supernodes, layer transitions, context flow |
+| `np-graph-hubs` | Finding important nodes by degree/weight |
+| `np-graph-sample` | Sampling top-N nodes from specific positions |
+| `np-graph-save` | Saving subgraphs to Neuronpedia API |
 
-| Key | Type | Description |
-|-----|------|-------------|
-| `nodes` | array | Features with `node_id`, `layer`, `ctx_idx`, `influence`, `feature_type` |
-| `links` | array | Edges with `source`, `target`, `weight` |
-| `metadata` | object | Model info, prompt tokens, pruning settings |
+## Typical Workflow
 
-**Node fields**: `node_id`, `layer` (int), `ctx_idx` (int), `influence` (float, null for logits), `feature_type` ("latent"/"logit"/"mlp reconstruction error")
+1. Use `np-graph-analyze` with `print_metadata` to understand the graph
+2. Use `np-graph-analyze` with `analyze_supernodes`, `layer_transitions` to see structure
+3. Use `np-graph-hubs` to find important nodes
+4. Use `np-graph-sample` to get candidates from specific positions
+5. Decide which nodes to group into supernodes
+6. Use `np-graph-save` to upload to Neuronpedia
 
-**Link fields**: `source` (node_id), `target` (node_id), `weight` (float)
+## When Skills Are Insufficient
 
-## Available Tools
-
-All tools are in `graph_analysis/` and run as Python modules from repo root.
-
-### 1. Circuit Analysis
-
-Analyze graph structure, supernodes, layer transitions, and context flow.
-
-```bash
-python -m graph_analysis.circuit_analysis --graph_file <path> --tasks <task1> <task2> ...
-```
-
-**Tasks**: `print_metadata`, `analyze_supernodes`, `layer_transitions`, `context_flow`
-
-### 2. Hub Analysis
-
-Find important nodes by degree and weight.
-
-```bash
-python -m graph_analysis.analyze_hubs --graph_file <path> --tasks <task1> ...
-```
-
-**Tasks**: `total_degree`, `weighted_in`, `weighted_out`
-
-### 3. Top-N Nodes
-
-Get top nodes from specific layer+context positions by metric.
-
-```bash
-python -m graph_analysis.top_n_nodes --graph_file <path> --layer_ctx <L,C> ... --top_n <N> --metric <metric>
-```
-
-**Metrics**: `influence`, `in_degree`, `weight`
-
-Example: `--layer_ctx 0,1 1,1 2,1 --top_n 5 --metric influence`
-
-### 4. Save Subgraph
-
-Save discovered subgraph to Neuronpedia API.
-
-```bash
-python -m graph_analysis.do_subgraph_save --graph_file <path> --api_key <key> \
-  -s <Label1> <node1> <node2> \
-  -s <Label2> <node3> <node4> \
-  --extra_pinned_ids <nodeX> <nodeY> \
-  --subgraph_name <name>
-```
-
-## Workflow: Subgraph Discovery
-
-1. **Understand the graph**: Run `print_metadata` to see prompt, model, and size
-2. **Analyze structure**: Run `analyze_supernodes` and `layer_transitions`
-3. **Find hubs**: Run hub analysis to identify important nodes
-4. **Sample candidates**: Use `top_n_nodes` for specific layer/context positions
-5. **Group into supernodes**: Decide which nodes to group and label
-6. **Save to API**: Use `do_subgraph_save` with supernodes and pinned IDs
-
-## Reference
-
-For detailed API contracts and advanced patterns, see [references/workflow.md](references/workflow.md).
+If you need functionality not covered by these skills (e.g., different grouping logic, filtering by feature labels, etc.), stop and ask the user for guidance rather than guessing.
