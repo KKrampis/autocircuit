@@ -1,0 +1,94 @@
+model:
+  name: google/gemma-2-2b
+  transcoder: gemma
+  backend: transformerlens
+
+graphs:
+  dallas_austin: "https://www.neuronpedia.org/gemma-2-2b/graph?slug=gemma-fact-dallas-austin&clerps=%5B%5D&pruningThreshold=0.53&pinnedIds=27_22605_10%2C20_15589_10%2CE_26865_9%2C21_5943_10%2C23_12237_10%2C20_15589_9%2C16_25_9%2C14_2268_9%2C18_8959_10%2C4_13154_9%2C7_6861_9%2C19_1445_10%2CE_2329_7%2CE_6037_4%2C0_13727_7%2C6_4012_7%2C17_7178_10%2C15_4494_4%2C6_4662_4%2C4_7671_4%2C3_13984_4%2C1_1000_4%2C19_7477_9%2C18_6101_10%2C16_4298_10%2C7_691_10&supernodes=%5B%5B%22capital%22%2C%2215_4494_4%22%2C%226_4662_4%22%2C%224_7671_4%22%2C%223_13984_4%22%2C%221_1000_4%22%5D%2C%5B%22state%22%2C%226_4012_7%22%2C%220_13727_7%22%5D%2C%5B%22Texas%22%2C%2220_15589_9%22%2C%2219_7477_9%22%2C%2216_25_9%22%2C%224_13154_9%22%2C%2214_2268_9%22%2C%227_6861_9%22%5D%2C%5B%22preposition+followed+by+place+name%22%2C%2219_1445_10%22%2C%2218_6101_10%22%5D%2C%5B%22capital+cities+%2F+say+a+capital+city%22%2C%2221_5943_10%22%2C%2217_7178_10%22%2C%227_691_10%22%2C%2216_4298_10%22%5D%5D"
+
+prompts:
+  dallas: "Fact: the capital of the state containing Dallas is"
+
+supernodes:
+  say_austin:
+    features:
+      - {layer: 23, pos: 10, feature_idx: 12237}
+
+  say_capital:
+    features_from:
+      graph: dallas_austin
+      groups: ["capital cities / say a capital city"]
+    children: [say_austin]
+
+  texas:
+    features_from:
+      graph: dallas_austin
+      groups: ["Texas"]
+    children: [say_austin]
+
+  state:
+    features_from:
+      graph: dallas_austin
+      groups: ["state"]
+    children: [say_capital, texas]
+
+  capital:
+    features_from:
+      graph: dallas_austin
+      groups: ["capital"]
+    children: [say_capital]
+
+  emb_dallas:
+    features: null
+    children: [texas]
+
+  emb_state:
+    features: null
+    children: [state]
+
+  emb_capital:
+    features: null
+    children: [capital]
+
+graph_layout:
+  - [emb_capital, emb_state]
+  - [capital, state, emb_dallas]
+  - [say_capital, texas]
+  - [say_austin]
+
+experiments:
+  ablate_say_capital:
+    description: "Shutting off 'Say a capital' shuts off 'Say Austin', top logit changes to Texas"
+    prompt: dallas
+    initialize:
+      dallas: [capital, state, emb_dallas, say_capital, texas, say_austin]
+    interventions:
+      - actions:
+          - {node: say_capital, scale: -2}
+
+  ablate_capital:
+    description: "Similar to ablating Say Capital, but weaker effect"
+    prompt: dallas
+    initialize:
+      dallas: [capital, state, emb_dallas, say_capital, texas, say_austin]
+    interventions:
+      - actions:
+          - {node: capital, scale: -2}
+
+  ablate_texas:
+    description: "Disabling Texas also disables Say Austin, yielding other state capitals"
+    prompt: dallas
+    initialize:
+      dallas: [capital, state, emb_dallas, say_capital, texas, say_austin]
+    interventions:
+      - actions:
+          - {node: texas, scale: -2}
+
+  ablate_state:
+    description: "Turning off state has little effect on other nodes or logits"
+    prompt: dallas
+    initialize:
+      dallas: [capital, state, emb_dallas, say_capital, texas, say_austin]
+    interventions:
+      - actions:
+          - {node: state, scale: -2}

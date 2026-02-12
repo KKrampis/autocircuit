@@ -1,0 +1,89 @@
+model:
+  name: google/gemma-2-2b
+  transcoder: gemma
+  backend: transformerlens
+
+graphs:
+  small_big_fr: "https://www.neuronpedia.org/gemma-2-2b/graph?slug=gemma-small-big-fr&clerps=%5B%5D&pruningThreshold=0.65&pinnedIds=27_21996_8%2CE_64986_5%2C24_16045_8%2C19_5058_8%2C21_10062_8%2C23_2592_8%2C20_1454_8%2CE_63265_2%2C23_8683_8%2C23_8488_8%2C20_11434_8%2C19_5802_8%2CE_1455_7%2C15_5617_5%2C18_9402_8%2C6_4362_5%2C14_11360_5%2C3_2908_5%2C2_5452_5%2C3_6627_5%2C6_16184_2%2C4_95_2%2C22_10566_8%2C21_1144_8%2CE_2025_1%2CE_581_3%2C5_982_2%2C6_651_2%2C5_8646_2%2C6_2743_2%2C8_1988_2%2C4_7409_2%2C4_15846_2%2C3_11241_2%2C2_321_2%2C2_4657_2&supernodes=%5B%5B%22say+big+%2F+large%22%2C%2223_8683_8%22%2C%2223_8488_8%22%2C%2221_10062_8%22%5D%2C%5B%22too%22%2C%2219_5058_8%22%2C%2224_16045_8%22%2C%2220_11434_8%22%5D%2C%5B%22small%22%2C%2215_5617_5%22%2C%2214_11360_5%22%2C%223_6627_5%22%2C%223_2908_5%22%2C%222_5452_5%22%5D%2C%5B%22size%22%2C%2218_9402_8%22%2C%226_4362_5%22%5D%2C%5B%22French%22%2C%2221_1144_8%22%2C%2222_10566_8%22%2C%2220_1454_8%22%2C%2223_2592_8%22%2C%2219_5802_8%22%5D%2C%5B%22opposite%22%2C%226_16184_2%22%2C%224_95_2%22%2C%225_8646_2%22%2C%226_2743_2%22%2C%228_1988_2%22%2C%226_651_2%22%2C%225_982_2%22%2C%222_321_2%22%2C%223_11241_2%22%2C%222_4657_2%22%2C%224_7409_2%22%2C%224_15846_2%22%5D%5D&clickedId=3_11241_2"
+  big_small_fr: "https://www.neuronpedia.org/gemma-2-2b/graph?slug=gemma-big-small-fr&clerps=%5B%5D&pruningThreshold=0.65&clickedId=21_9082_8&pinnedIds=27_64986_8%2CE_21996_5%2C21_9082_8%2C15_5756_5%2C6_4362_5%2C3_2873_5%2C2_4298_5&supernodes=%5B%5B%22large+%2F+huge%22%2C%2215_5756_5%22%2C%226_4362_5%22%2C%223_2873_5%22%2C%222_4298_5%22%5D%5D"
+  small_synonym_fr: "https://www.neuronpedia.org/gemma-2-2b/graph?slug=gemma-small-min-fr&clerps=%5B%5D&pruningThreshold=0.8&pinnedIds=27_64986_9%2C27_69658_9%2CE_64986_6%2C8_11850_3%2CE_14904_2%2C4_13762_3%2C6_10175_3%2C3_15891_3&supernodes=%5B%5B%22synonymy%22%2C%223_15891_3%22%2C%228_11850_3%22%2C%224_13762_3%22%2C%226_10175_3%22%5D%5D&clickedId=5_13985_3"
+
+prompts:
+  small_big_fr: 'Le contraire de "petit" est "'
+  big_small_fr: 'Le contraire de "grand" est "'
+  synonym_fr: 'Un synonyme de "petit" est "'
+
+supernodes:
+  french:
+    features_from:
+      graph: small_big_fr
+      groups: ["French"]
+
+  say_big:
+    features_from:
+      graph: small_big_fr
+      groups: ["say big / large"]
+
+  small:
+    features_from:
+      graph: small_big_fr
+      groups: ["small"]
+    children: [say_big]
+
+  opposite:
+    features_from:
+      graph: small_big_fr
+      groups: ["opposite"]
+    children: [say_big]
+
+  # --- Big→small replacement nodes ---
+  say_small:
+    features:
+      - {layer: 21, pos: 8, feature_idx: 9082}
+
+  big:
+    features_from:
+      graph: big_small_fr
+      groups: ["large / huge"]
+    children: [say_small]
+
+  # --- Synonym replacement node ---
+  synonym:
+    features_from:
+      graph: small_synonym_fr
+      groups: ["synonymy"]
+    pos_offset: -1
+    children: [say_small]
+
+graph_layout:
+  - [french, opposite, small]
+  - [say_big]
+
+experiments:
+  replace_small_with_big:
+    description: "Say big shuts off, Say small activates, output becomes 'petit' (French for small)"
+    prompt: small_big_fr
+    initialize:
+      small_big_fr: [say_big, small, french, opposite]
+      big_small_fr: [say_small, big]
+    interventions:
+      - actions:
+          - {node: small, scale: -2}
+          - {node: big, scale: 2}
+        replacements:
+          small: big
+          say_big: say_small
+
+  replace_opposite_with_synonym:
+    description: "Does NOT work - Say big stays on, outputs don't change (opposite has weak connections)"
+    prompt: small_big_fr
+    initialize:
+      small_big_fr: [say_big, small, french, opposite]
+      synonym_fr: [synonym]
+    interventions:
+      - actions:
+          - {node: opposite, scale: -2}
+          - {node: synonym, scale: 2}
+        replacements:
+          opposite: synonym
+          say_big: say_small
