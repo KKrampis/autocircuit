@@ -57,11 +57,11 @@ from graph_analysis.utils.yaml_loader import (
 # ---------------------------------------------------------------------------
 
 
-def url_has_pinned_ids(url: str) -> bool:
-    """Check if a Neuronpedia URL contains pinnedIds query parameter."""
+def url_valid_graph(url: str) -> bool:
+    """Check if a Neuronpedia URL contains pinnedIds and supernodes query parameters."""
     parsed = urlparse(url)
     query = parse_qs(parsed.query)
-    return "pinnedIds" in query and bool(query["pinnedIds"][0])
+    return "pinnedIds" in query and bool(query["pinnedIds"][0]) and "supernodes" in query and bool(query["supernodes"][0])
 
 
 def enrich_url_from_subgraph(url: str, api_key: str) -> str:
@@ -74,7 +74,7 @@ def enrich_url_from_subgraph(url: str, api_key: str) -> str:
     subgraph_id = query.get("subgraph", [None])[0]
 
     if not subgraph_id:
-        print("Error: URL has no pinnedIds and no subgraph param.", file=sys.stderr)
+        print("Error: URL has no pinnedIds or supernodes and no subgraph param.", file=sys.stderr)
         sys.exit(1)
 
     model_id, slug = parse_neuronpedia_url(url)
@@ -121,13 +121,13 @@ def get_prompt_from_url(url: str) -> str:
 
 
 def prepare_url(url: str, api_key: str | None) -> str:
-    """Ensure URL has pinnedIds, enriching from subgraph list API if needed."""
-    if url_has_pinned_ids(url):
+    """Ensure URL has pinnedIds and supernodes, enriching from subgraph list API if needed."""
+    if url_valid_graph(url):
         return url
 
-    print("  URL missing pinnedIds, fetching from subgraph list API...")
+    print("  URL missing pinnedIds or supernodes, fetching from subgraph list API...")
     if not api_key:
-        print("Error: URL has no pinnedIds and no --api_key provided.", file=sys.stderr)
+        print("Error: URL has no pinnedIds or supernodes and no --api_key provided.", file=sys.stderr)
         sys.exit(1)
 
     return enrich_url_from_subgraph(url, api_key)
@@ -408,7 +408,7 @@ def main():
     )
     parser.add_argument(
         "--api_key",
-        help="Neuronpedia API key (needed if graph URLs lack pinnedIds)"
+        help="Neuronpedia API key (needed if graph URLs lack pinnedIds and supernodes query params)"
     )
     parser.add_argument(
         "--json", action="store_true",

@@ -5,7 +5,6 @@ Usage:
 """
 
 import argparse
-import json
 
 import requests
 
@@ -45,7 +44,7 @@ if __name__ == "__main__":
         print(f"Found {len(subgraphs)} subgraph(s):")
         print("node format: layer_featureidx_pos")
         for sg in subgraphs:
-            print(f"\n  graphMetadataId: {sg['graphMetadataId']}")
+            print(f"\n  id: {sg['id']}")
             print(f"  displayName: {sg.get('displayName', '(none)')}")
             print(f"  pinnedIds: {len(sg['pinnedIds'])} nodes")
             print(f"  supernodes: {len(sg['supernodes'])} groups")

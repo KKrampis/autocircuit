@@ -6,7 +6,7 @@ import torch
 from graph_analysis.run_intervention import (
     supernode_intervention,
     print_intervention_results,
-    url_has_pinned_ids,
+    url_valid_graph,
     get_prompt_from_url,
     run_experiment,
 )
@@ -142,15 +142,15 @@ class TestPrintInterventionResults(unittest.TestCase):
 class TestUrlHasPinnedIds(unittest.TestCase):
     def test_url_with_pinned_ids(self):
         url = "https://www.neuronpedia.org/gemma-2-2b/graph?slug=test&pinnedIds=27_22605_10%2C20_15589_10"
-        self.assertTrue(url_has_pinned_ids(url))
+        self.assertTrue(url_valid_graph(url))
 
     def test_url_without_pinned_ids(self):
         url = "https://www.neuronpedia.org/gemma-2-2b/graph?slug=test"
-        self.assertFalse(url_has_pinned_ids(url))
+        self.assertFalse(url_valid_graph(url))
 
     def test_url_with_empty_pinned_ids(self):
         url = "https://www.neuronpedia.org/gemma-2-2b/graph?slug=test&pinnedIds="
-        self.assertFalse(url_has_pinned_ids(url))
+        self.assertFalse(url_valid_graph(url))
 
 
 class TestGetPromptFromUrl(unittest.TestCase):
