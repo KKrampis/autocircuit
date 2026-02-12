@@ -52,6 +52,7 @@ This workflow is **not fixed** - adapt it as needed for each situation.
    - Diff behavior between main and your changes when relevant
    - Ask yourself: "Would a staff engineer approve this?"
    - Run tests, check logs, demonstrate correctness
+   - Write tests in `tests/` folder using the `unittest` library, run with `pytest`
 
 ### When Writing Code
 
