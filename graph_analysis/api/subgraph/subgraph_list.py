@@ -43,10 +43,13 @@ if __name__ == "__main__":
         print(f"No subgraphs found for {args.model_id}/{args.slug}")
     else:
         print(f"Found {len(subgraphs)} subgraph(s):")
+        print("node format: layer_featureidx_pos")
         for sg in subgraphs:
-            print(f"\n  id: {sg['id']}")
+            print(f"\n  graphMetadataId: {sg['graphMetadataId']}")
             print(f"  displayName: {sg.get('displayName', '(none)')}")
             print(f"  pinnedIds: {len(sg['pinnedIds'])} nodes")
             print(f"  supernodes: {len(sg['supernodes'])} groups")
             for sn in sg["supernodes"]:
                 print(f"    - {sn[0]}: {len(sn) - 1} nodes")
+                for node_id in sn[1:]:
+                    print(f"      - {node_id}")
