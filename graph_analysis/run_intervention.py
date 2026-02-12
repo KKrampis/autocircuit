@@ -274,7 +274,7 @@ def run_experiment(
     pos_offsets: dict[str, int],
     activations_cache: dict[str, tuple],
     save_graph: bool = False,
-    graph_dir: str = "output/graphs/",
+    graph_dir: str = ".tmp/run_intervention",
 ) -> dict:
     """Run a single experiment from a YAML config.
 
@@ -403,8 +403,8 @@ def main():
         help="Save SVG graph visualizations to files"
     )
     parser.add_argument(
-        "--graph_dir", default="output/graphs/",
-        help="Directory for SVG output files (default: output/graphs/)"
+        "--graph_dir", default=".tmp/run_intervention",
+        help="Directory for SVG output files (default: .tmp/run_intervention)"
     )
     parser.add_argument(
         "--api_key",

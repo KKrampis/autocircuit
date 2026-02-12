@@ -19,7 +19,7 @@ python -m graph_analysis.run_intervention \
 - `--config`: Path to YAML experiment config file (required)
 - `--experiment`: Specific experiment(s) to run (repeatable). If omitted, runs all experiments in the config.
 - `--save_graph`: Save SVG graph visualizations to files
-- `--graph_dir`: Directory for SVG output files (default: `output/graphs/`)
+- `--graph_dir`: Directory for SVG output files (default: `.tmp/run_intervention`)
 - `--api_key`: Neuronpedia API key (needed if graph URLs lack pinnedIds)
 - `--json`: Output structured JSON results
 
