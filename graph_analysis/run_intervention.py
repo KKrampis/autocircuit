@@ -245,12 +245,8 @@ def save_graph_svg(
     top_outputs: list[tuple[str, float]],
     output_path: str,
 ):
-    """Save graph visualization as SVG file.
-
-    Imports create_graph_visualization from demo.graph_visualization,
-    which returns an IPython.display.SVG object.
-    """
-    from demo.graph_visualization import create_graph_visualization
+    """Save graph visualization as SVG file."""
+    from graph_analysis.utils.graph_visualization import create_graph_visualization
 
     svg_obj = create_graph_visualization(intervention_graph, top_outputs)
     svg_data = svg_obj.data
