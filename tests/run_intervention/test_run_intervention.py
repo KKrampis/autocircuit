@@ -140,8 +140,8 @@ class TestPrintInterventionResults(unittest.TestCase):
 
 
 class TestUrlHasPinnedIds(unittest.TestCase):
-    def test_url_with_pinned_ids(self):
-        url = "https://www.neuronpedia.org/gemma-2-2b/graph?slug=test&pinnedIds=27_22605_10%2C20_15589_10"
+    def test_url_valid(self):
+        url = "https://www.neuronpedia.org/gemma-2-2b/graph?slug=test&pinnedIds=27_22605_10%2C20_15589_10&supernodes=%5B%5B%22capital%22%2C%2227_22605_10%22%2C%2220_15589_10%22%5D%5D"
         self.assertTrue(url_valid_graph(url))
 
     def test_url_without_pinned_ids(self):
