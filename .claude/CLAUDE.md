@@ -13,6 +13,7 @@ This workflow is **not fixed** - adapt it as needed for each situation.
   - Data structures (JSON schemas, field types, possible values)
   - API contracts (request/response formats)
   - Code behavior (what functions return, side effects)
+- **Skills as interfaces** - Skills in `.claude/skills/` let agents understand tools from metadata alone without reading code. Always create a skill after building and testing a new python module.
 
 ### Approach
 
@@ -29,16 +30,19 @@ This workflow is **not fixed** - adapt it as needed for each situation.
 
 3. **Ask when limited** - If you hit a limitation or need information that isn't available, stop and ask the user rather than guessing
 
-4. **Plan Mode Default**
-   - Enter plan mode for any non-trivial task (3+ steps or architectural decisions)
-   - If something goes sideways, stop and re-plan immediately, don't keep pushing
-   - Use plan mode for verification steps, not just building
-   - Write detailed specs upfront to reduce ambiguity
+4. **Scope Boundary**
+   - Work within this repository by default.
+   - Reading specific functions/classes in external dependencies is fine when you need to understand how an API you're about to use actually works.
+   - Do not broadly explore entire external libraries. Be targeted: read the specific code you'll call.
+   - If an API is unclear from usage and targeted reads, ask the user.
 
 5. **Subagent Strategy**
-   - Use subagents liberally to keep main context window clean
-   - Offload research, exploration, and parallel analysis to subagents
-   - For complex problems, throw more compute at it via subagents
+   - Main agent = researcher with hypotheses about subgraphs
+   - When a needed skill/tool doesn't exist, spin up a subagent to:
+     1. Create the python file in `graph_analysis/`
+     2. Test it
+     3. Create a skill in `.claude/skills/` using the `skill-creator` skill
+   - Use subagents for research only when reading many files would bloat main context
    - One task per subagent for focused execution
 
 6. **Self-Improvement Loop**
