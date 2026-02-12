@@ -29,7 +29,7 @@ First, we can try to do this by identifying these supernode features, which we s
 """
 
 supernode_features = [
-    Feature(layer=20,pos=-1,feature_idx=341),
+    Feature(layer=20,pos=-1,feature_idx=341), # spanish supernode feature
 ]
 
 # %%
@@ -74,4 +74,95 @@ french_supernode_features = [Feature(layer=20,pos=-1,feature_idx=1454)]
 
 """
 But what should we set the values of the French supernode feature to be? Ideally, we set them to some in-distribution values. To do this, we can get the activations of these nodes on the French input sentence. We'll get these as a sparse tensor, to save on memory.
+
+Sparse tensor, a tensor where most values are zero. Instead of storing all values, it only stores the non-zero positions and their values. For example:
+
+Dense: [0, 0, 5.2, 0, 0, 0, 3.1, 0, ...] # stores every element
+Sparse: {2: 5.2, 6: 3.1} # stores only non-zeros
+
+This matters here because each transcoder layer has ~16k features, but only a handful fire on any given token (that's what "sparse" means in SAE/transcoder research, most features are inactive)
 """
+
+s_spanish = "Hecho: Michael Jordan juega al"
+_, activations = model.get_activations(s_spanish, sparse=True)
+
+# %%
+
+print("activations shape:", activations.indices()) # shape: [3, nnz] (3 dims: layer, seq, feat)
+print("activations nonzero values:", activations.values()) # shape: [nnz]
+
+indices = activations.indices() # shape: [3, nnz] (3 dims: layer, seq, feat)
+layer_idx = indices[0] # which layer each non-zero is in
+seq_idx = indices[1] # which token position
+feat_idx = indices[2] # which feature
+
+# To see active features at a specific layer/position, convert that slice to dense:
+layer, pos = 20, -1
+dense_slice = activations[layer, pos].to_dense() # shape: [n_features]
+nonzero_feats = dense_slice.nonzero().squeeze(-1) # feature indices that fired
+print(f"nonzero feature indices at layer {20}, pos {pos}:", nonzero_feats)
+print("their values:", dense_slice[nonzero_feats]) # their values
+
+# %%
+
+"""
+Now, we construct and perform the intervention! Each supernode_feature contaisn precisely the information needed to index into activations
+"""
+spanish_supernode_features = supernode_features  # from before
+fr_es_intervention_tuples = [(*supernode_feature, 0.0) for supernode_feature in french_supernode_features] 
+fr_es_intervention_tuples += [(*supernode_feature, 10*activations[supernode_feature]) for (supernode_feature) in spanish_supernode_features]
+
+# %%
+
+s_french = "Fait: Michael Jordan joue au"
+
+with torch.inference_mode():
+    original_logits, _ = model.feature_intervention(s_french, [])
+    new_logits, _ = model.feature_intervention(s_french, fr_es_intervention_tuples)
+
+display_topk_token_predictions(s_french, original_logits, new_logits)
+
+# %% Example: Interventions + Sampling
+
+"""
+We've now intervened twice on the last token of the sentence; interventions on other positions work analogously. But what if we want to intervene in an open-ended fashion, allowing our model to generate tokens with that intervention still active? We can do this as follows, by setting the position of our intervention to an open-ended slice: `slice(pos, None None)`. We set `pos` to be the last token of the original input, but you can also set it to an earlier position.
+"""
+sequence_length = len(model.tokenizer(s_spanish).input_ids)
+original_feature_pos = sequence_length - 1
+open_ended_slice = slice(original_feature_pos, None, None)
+open_ended_es_fr_intervention_tuples = [(layer, open_ended_slice, feature_idx, 0.0) for (layer, _, feature_idx) in french_supernode_features] 
+open_ended_es_fr_intervention_tuples += [(layer, open_ended_slice, feature_idx, 10*activations[layer, orig_pos, feature_idx]) for (layer, orig_pos, feature_idx) in spanish_supernode_features]
+
+# %%
+
+"""
+Now, we generate by  calling `feature_intervention_generate`! `do_sample` is off here for consistency, but you can turn it on.
+
+Without KV cache - every generation step reruns the full forward pass over all tokens:
+Step 1: ["F", "ait", ":", " Michael", " Jordan", " joue", " au"] -> predicts " basket"
+Step 2: ["F", "ait", ":", " Michael", " Jordan", " joue", " au", " basket"] -> predicts " avec"]
+
+At every step, your intervention hook fires on the full sequence. If you said "zero out feature 1454 at position 6", it applies cleanly at position 6 every time.
+
+With KV cache - the attention keys/values from previous tokens are cached. Only the newest token is passed through the model on each step:
+Step 1: ["F", "ait", ":", " Michael", " Jordan", " joue", " au"] -> predicts " basket" -> full pass, KVs cached
+Step 2: ["basket"] -> predicts " avec" -> only 1 token, use cached KVs
+
+The problem: at step 2, the input is just ["basket"], it has only 1 position. If your intervention says "modify position 5", there is no position 6 anymore. The hook has nothing to grab onto.
+
+That's why open-ended interventions use `slice(pos, None)` and the code converts them to `position=0` during generation in `circuit_tracer.replacement_model.replacement_model_transformerlens.py`
+
+```
+if isinstance(pos, slice) and pos.stop is None:
+    converted.append((layer, 0, feat_idx, value))
+```
+
+So with KV cache enabled, the intervention is re-applied at position 0 (the current new token) on every generation step, which is actually what you want for open-ended generation.
+"""
+
+pre_intervention_generation = [model.feature_intervention_generate(s_french, [], do_sample=False, verbose=False)[0]]
+post_intervention_generation = [model.feature_intervention_generate(s_french, open_ended_es_fr_intervention_tuples, do_sample=False, verbose=False)[0]]
+
+display_generations_comparison(s_french, pre_intervention_generation, post_intervention_generation)
+
+# %%
