@@ -12,10 +12,23 @@
 
 ## Phase 1: Graph Collection & Analysis
 
+- [x] Run attribution on prompts to generate graphs (`np-run-attribution` skill)
+- [x] Analyze graph structure: supernodes, hubs, layer transitions (`np-graph-analyze`, `np-graph-hubs`)
+- [x] Inspect individual features (`np-check-feature` skill)
+- [x] Run supernode interventions to test hypotheses (`np-run-intervention` skill)
+- [x] Run direct feature interventions (`np-feature-intervention` skill)
+- [x] Save subgraphs to Neuronpedia API (`np-graph-save` skill)
 - [ ] Automatically collect graphs across prompts using Neuronpedia's API
 - [ ] Programmatically upload pruned graphs using Neuronpedia's API
 - [ ] Extract subgraphs by filtering noise
   - [ ] Define methods to extract a subgraph (research required)
+
+### Gaps
+
+- [ ] **Automated graph annotation**: `run_intervention.py` requires an already-annotated Neuronpedia URL (with supernodes defined by a human). There is no programmatic way to annotate a new graph (group nodes into supernodes) without the manual frontend (`serve()`). Possible approaches:
+  - Use `np-graph-analyze` + `np-graph-hubs` to identify candidate groupings, then `np-graph-save` to save them
+  - Build an LLM-based annotation step that reads feature descriptions and proposes supernode groupings
+- [ ] **Cross-prompt supernode matching**: No tool to find the "same" supernode across different prompts (e.g., find the "Texas" equivalent in an "Oakland" graph)
 
 ## Phase 2: Subgraph Discovery
 
