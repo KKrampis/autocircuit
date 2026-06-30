@@ -82,16 +82,26 @@ def is_429(r):    return is_error(r) and "429" in str(r.get("error", ""))
 def is_500(r):    return is_error(r) and "500" in str(r.get("error", ""))
 
 
-def safe_steer(prompt, features, strength_multiplier=4, label="", max_500=6):
-    n500 = 0
+def is_transient(r):
+    """500 or a network-level error (timeout / connection reset) — worth retrying."""
+    if not is_error(r):
+        return False
+    e = str(r.get("error", "")).lower()
+    return ("500" in e or "timed out" in e or "timeout" in e
+            or "urlopen" in e or "connection" in e or "reset" in e)
+
+
+def safe_steer(prompt, features, strength_multiplier=4, label="", max_retries=6):
+    n = 0
     while True:
         r = steer(prompt, features, strength_multiplier=strength_multiplier)
         if is_429(r):
             print(f"  [{label}] 429; sleeping {RATE_LIMIT_WINDOW}s...", flush=True)
             time.sleep(RATE_LIMIT_WINDOW); continue
-        if is_500(r) and n500 < max_500:
-            n500 += 1; w = 10 * n500
-            print(f"  [{label}] 500 (try {n500}/{max_500}); retry in {w}s...", flush=True)
+        if is_transient(r) and n < max_retries:
+            n += 1; w = 10 * n
+            print(f"  [{label}] transient err ({r.get('error')!r}) try {n}/{max_retries}; "
+                  f"retry in {w}s...", flush=True)
             time.sleep(w); continue
         return r
 

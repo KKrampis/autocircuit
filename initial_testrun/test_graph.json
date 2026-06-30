@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "model": "gpt2-small",
+    "prompt": "When Mary and John went to the store, Mary gave a drink to",
+    "slug": "test-ioi"
+  },
+  "nodes": [
+    {"id": "E_2329_2", "feature": 2329, "layer": 0, "ctx_idx": 2, "weight": 0.12, "label": "name token embedding"},
+    {"id": "5_100_3", "feature": 100, "layer": 5, "ctx_idx": 3, "weight": 0.18, "label": "duplicate token detection"},
+    {"id": "7_200_5", "feature": 200, "layer": 7, "ctx_idx": 5, "weight": 0.15, "label": "subject-verb agreement"},
+    {"id": "9_300_5", "feature": 300, "layer": 9, "ctx_idx": 5, "weight": 0.31, "label": "name mover (indirect object)"},
+    {"id": "9_301_5", "feature": 301, "layer": 9, "ctx_idx": 5, "weight": 0.22, "label": "backup name mover"},
+    {"id": "10_400_5", "feature": 400, "layer": 10, "ctx_idx": 5, "weight": 0.28, "label": "output composition"},
+    {"id": "4_50_2", "feature": 50, "layer": 4, "ctx_idx": 2, "weight": 0.08, "label": "positional feature"},
+    {"id": "6_150_3", "feature": 150, "layer": 6, "ctx_idx": 3, "weight": 0.10, "label": "entity tracking"},
+    {"id": "8_250_4", "feature": 250, "layer": 8, "ctx_idx": 4, "weight": 0.09, "label": "syntax structure"},
+    {"id": "11_500_5", "feature": 500, "layer": 11, "ctx_idx": 5, "weight": 0.25, "label": "final prediction boost"},
+    {"id": "3_30_1", "feature": 30, "layer": 3, "ctx_idx": 1, "weight": 0.05, "label": "low-level token feature"},
+    {"id": "9_310_5", "feature": 310, "layer": 9, "ctx_idx": 5, "weight": 0.03, "label": "minor attention residual"}
+  ],
+  "edges": [
+    {"source": "E_2329_2", "target": "4_50_2", "weight": 0.15},
+    {"source": "E_2329_2", "target": "5_100_3", "weight": 0.20},
+    {"source": "4_50_2", "target": "5_100_3", "weight": 0.10},
+    {"source": "5_100_3", "target": "7_200_5", "weight": 0.25},
+    {"source": "5_100_3", "target": "9_300_5", "weight": 0.30},
+    {"source": "6_150_3", "target": "9_300_5", "weight": 0.12},
+    {"source": "7_200_5", "target": "9_300_5", "weight": 0.18},
+    {"source": "7_200_5", "target": "9_301_5", "weight": 0.14},
+    {"source": "8_250_4", "target": "9_300_5", "weight": 0.08},
+    {"source": "8_250_4", "target": "9_301_5", "weight": 0.06},
+    {"source": "9_300_5", "target": "10_400_5", "weight": 0.35},
+    {"source": "9_301_5", "target": "10_400_5", "weight": 0.20},
+    {"source": "10_400_5", "target": "11_500_5", "weight": 0.40},
+    {"source": "3_30_1", "target": "5_100_3", "weight": 0.04},
+    {"source": "9_310_5", "target": "10_400_5", "weight": 0.02},
+    {"source": "E_2329_2", "target": "3_30_1", "weight": 0.03},
+    {"source": "5_100_3", "target": "6_150_3", "weight": 0.11}
+  ]
+}

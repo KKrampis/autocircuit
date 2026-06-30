@@ -1,0 +1,94 @@
+Circuit band sizes: {'L0': 40, 'L1-L4': 67, 'L5-L9': 50, 'L10+': 23, 'L1+': 140, 'L1-L9': 117} 
+
+======================================================================== 
+STAGE A — layer-stratified ablation
+ ========================================================================
+  [A] analog_berlin   circuit L0     (n= 40) -> ' Germany'       lp=-0.3203125  disrupt=False
+  [A] analog_berlin   circuit L1-L4  (n= 67) -> '.'              lp=-2.375  disrupt=True
+  [A] analog_berlin   circuit L5-L9  (n= 50) -> ' be'            lp=-0.73828125  disrupt=True
+  [A] analog_berlin   circuit L10+   (n= 23) -> '.'              lp=-0.80078125  disrupt=True
+  [A] analog_berlin   circuit L1+    (n=140) -> 'AddTagHelper'   lp=-1.984375  disrupt=True
+  [A] analog_berlin   NULL    L1+    (n=140) -> ' and'           lp=-2.484375  disrupt=True
+  [A] analog_rome     circuit L0     (n= 40) -> ' Italy'         lp=-0.59375  disrupt=False
+  [A] analog_rome     circuit L1-L4  (n= 67) -> '.'              lp=-2.328125  disrupt=True
+  [A] analog_rome     circuit L5-L9  (n= 50) -> ' be'            lp=-0.67578125  disrupt=True
+  [A] analog_rome     circuit L10+   (n= 23) -> '.'              lp=-0.80859375  disrupt=True
+  [A] analog_rome     circuit L1+    (n=140) -> 'AddTagHelper'   lp=-1.9453125  disrupt=True
+  [A] analog_rome     NULL    L1+    (n=140) -> ','              lp=-0.322265625  disrupt=True
+  [A] analog_tokyo    circuit L0     (n= 40) -> ' Japan'         lp=-0.126953125  disrupt=False
+  [A] analog_tokyo    circuit L1-L4  (n= 67) -> '.'              lp=-2.296875  disrupt=True
+  [A] analog_tokyo    circuit L5-L9  (n= 50) -> ' be'            lp=-0.373046875  disrupt=True
+  [A] analog_tokyo    circuit L10+   (n= 23) -> '.'              lp=-0.8984375  disrupt=True
+  [A analog_tokyo L1+] 500 (try 1/6); retry in 10s...
+  [A] analog_tokyo    circuit L1+    (n=140) -> 'AddTagHelper'   lp=-1.984375  disrupt=True
+  [A] analog_tokyo    NULL    L1+    (n=140) -> ','              lp=-0.5625  disrupt=True
+  [A] analog_teacher  circuit L0     (n= 40) -> ' be'            lp=-2.25  disrupt=True
+  [A] analog_teacher  circuit L1-L4  (n= 67) -> '.'              lp=-2.25  disrupt=True
+  [A] analog_teacher  circuit L5-L9  (n= 50) -> ' be'            lp=-2.28125  disrupt=True
+  [A] analog_teacher  circuit L10+   (n= 23) -> '.'              lp=-0.7890625  disrupt=True
+  [A] analog_teacher  circuit L1+    (n=140) -> 'AddTagHelper'   lp=-1.875  disrupt=True
+  [A] analog_teacher  NULL    L1+    (n=140) -> ' Hospital'      lp=-1.4375  disrupt=True
+  [A] analog_bird     circuit L0     (n= 40) -> ' air'           lp=-1.515625  disrupt=False
+  [A] analog_bird     circuit L1-L4  (n= 67) -> ' water'         lp=-1.7109375  disrupt=True
+  [A] analog_bird     circuit L5-L9  (n= 50) -> ' be'            lp=-1.4453125  disrupt=True
+  [A] analog_bird     circuit L10+   (n= 23) -> '.'              lp=-0.80859375  disrupt=True
+  [A] analog_bird     circuit L1+    (n=140) -> 'AddTagHelper'   lp=-2.234375  disrupt=True
+  [A analog_bird null:L1+] 500 (try 1/6); retry in 10s...
+  [A] analog_bird     NULL    L1+    (n=140) -> ' nemici'        lp=-2.515625  disrupt=True
+
+ ======================================================================== 
+STAGE B — strength titration
+ ========================================================================
+  [B] analog_berlin circuit s= -2 -> ' to'            lp=-0.0294189453125  disrupt=True
+  [B] analog_berlin null    s= -2 -> ' similar'       lp=-0.6171875  disrupt=True
+  [B] analog_berlin circuit s= -5 -> ' to'            lp=-0.0245361328125  disrupt=True
+  [B] analog_berlin null    s= -5 -> ' similar'       lp=-0.66796875  disrupt=True
+Circuit band sizes: {'L0': 40, 'L1-L4': 67, 'L5-L9': 50, 'L10+': 23, 'L1+': 140, 'L1-L9': 117} 
+
+======================================================================== 
+STAGE A — layer-stratified ablation
+ ========================================================================
+
+ ======================================================================== 
+STAGE B — strength titration
+ ========================================================================
+  [B] analog_berlin circuit s=-10 -> ' to'            lp=-0.0269775390625  disrupt=True
+  [B] analog_berlin null    s=-10 -> ' similar'       lp=-0.6328125  disrupt=True
+  [B] analog_berlin circuit s=-20 -> ' to'            lp=-0.0299072265625  disrupt=True
+  [B] analog_berlin null    s=-20 -> ' similar'       lp=-0.6796875  disrupt=True
+  [B] analog_berlin circuit s=-40 -> ' to'            lp=-0.0299072265625  disrupt=True
+  [B] analog_berlin null    s=-40 -> ' similar'       lp=-0.6953125  disrupt=True
+  [B] analog_tokyo  circuit s= -2 -> ' to'            lp=-0.026611328125  disrupt=True
+  [B] analog_tokyo  null    s= -2 -> ' onPostExecute' lp=-1.109375  disrupt=True
+  [B] analog_tokyo  circuit s= -5 -> ' to'            lp=-0.0245361328125  disrupt=True
+  [B] analog_tokyo  null    s= -5 -> ' onPostExecute' lp=-1.1171875  disrupt=True
+  [B] analog_tokyo  circuit s=-10 -> ' to'            lp=-0.0289306640625  disrupt=True
+  [B analog_tokyo null s=-10] transient err ('HTTP 500: Internal Server Error') try 1/6; retry in 10s...
+  [B] analog_tokyo  null    s=-10 -> ' onPostExecute' lp=-1.203125  disrupt=True
+  [B] analog_tokyo  circuit s=-20 -> ' to'            lp=-0.0301513671875  disrupt=True
+  [B] analog_tokyo  null    s=-20 -> ' onPostExecute' lp=-1.203125  disrupt=True
+  [B] analog_tokyo  circuit s=-40 -> ' to'            lp=-0.0299072265625  disrupt=True
+  [B] analog_tokyo  null    s=-40 -> ' onPostExecute' lp=-1.203125  disrupt=True
+
+ ======================================================================== 
+STAGE C-proxy — Phase1 x Phase2 interaction (behavioral, NOT path patching)
+ ========================================================================
+  [C] analog_berlin P1     (n= 67) -> '.'              lp=-2.375  disrupt=True
+  [C] analog_berlin P2     (n= 50) -> ' be'            lp=-0.73828125  disrupt=True
+  [C analog_berlin P1+P2] transient err ('HTTP 500: Internal Server Error') try 1/6; retry in 10s...
+  [C] analog_berlin P1+P2  (n=117) -> ' and'           lp=-2.234375  disrupt=True
+  [C] analog_rome   P1     (n= 67) -> '.'              lp=-2.328125  disrupt=True
+  [C] analog_rome   P2     (n= 50) -> ' be'            lp=-0.67578125  disrupt=True
+  [C] analog_rome   P1+P2  (n=117) -> ','              lp=-1.921875  disrupt=True
+
+ ======================================================================== 
+STAGE D — held-out analogies (fixed circuit, never used to define it)
+ ========================================================================
+  [D] heldout_vienna  baseline=' Austria'   circuit-ablation -> ' to'        lp=-0.02978515625  disrupt=True
+  [D] heldout_oslo    baseline=' Norway'    circuit-ablation -> ' to'        lp=-0.0299072265625  disrupt=True
+  [D] heldout_knife   baseline=' cutting'   circuit-ablation -> ' to'        lp=-0.0263671875  disrupt=True
+  [D heldout_ant] transient err ('HTTP 500: Internal Server Error') try 1/6; retry in 10s...
+  [D heldout_ant] transient err ('HTTP 500: Internal Server Error') try 2/6; retry in 20s...
+  [D] heldout_ant     baseline='?'          circuit-ablation -> ' to'        lp=-0.0264892578125  disrupt=True
+
+DONE. Results in /Users/anish/Desktop/aisc_project/experiments/exp8_180feature_validation/deep_validation_results.json

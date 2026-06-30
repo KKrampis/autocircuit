@@ -1,0 +1,6268 @@
+{
+  "A": {
+    "analog_berlin": {
+      "circuit:L0": {
+        "band": "L0",
+        "n": 40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to Germany.\n\nThe French",
+          "first_steered_token": " Germany",
+          "first_steered_logprob": -0.3203125,
+          "first_steered_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.3203125
+            },
+            {
+              "token": " Berlin",
+              "logprob": -2.0625
+            },
+            {
+              "token": " the",
+              "logprob": -3.5625
+            },
+            {
+              "token": " Rome",
+              "logprob": -3.6875
+            },
+            {
+              "token": " London",
+              "logprob": -4.5
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": false
+      },
+      "circuit:L1-L4": {
+        "band": "L1-L4",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to.\n\nThe problem is",
+          "first_steered_token": ".",
+          "first_steered_logprob": -2.375,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -2.375
+            },
+            {
+              "token": "\n\n",
+              "logprob": -3
+            },
+            {
+              "token": " be",
+              "logprob": -3.125
+            },
+            {
+              "token": " the",
+              "logprob": -3.125
+            },
+            {
+              "token": " for",
+              "logprob": -3.375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L5-L9": {
+        "band": "L5-L9",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to be built, the capital",
+          "first_steered_token": " be",
+          "first_steered_logprob": -0.73828125,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -0.73828125
+            },
+            {
+              "token": " do",
+              "logprob": -3.609375
+            },
+            {
+              "token": " the",
+              "logprob": -3.734375
+            },
+            {
+              "token": " rule",
+              "logprob": -4.125
+            },
+            {
+              "token": " have",
+              "logprob": -4.5
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L10+": {
+        "band": "L10+",
+        "n": 23,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to.\n\n\n\n",
+          "first_steered_token": ".",
+          "first_steered_logprob": -0.80078125,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -0.80078125
+            },
+            {
+              "token": " Europe",
+              "logprob": -1.734375
+            },
+            {
+              "token": " ",
+              "logprob": -2.421875
+            },
+            {
+              "token": "\n",
+              "logprob": -2.546875
+            },
+            {
+              "token": "-",
+              "logprob": -3.609375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L1+": {
+        "band": "L1+",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is toAddTagHelperAddTagHelperAddTagHelperAddTagHelperAddTagHelper",
+          "first_steered_token": "AddTagHelper",
+          "first_steered_logprob": -1.984375,
+          "first_steered_top5": [
+            {
+              "token": "AddTagHelper",
+              "logprob": -1.984375
+            },
+            {
+              "token": "Stacks",
+              "logprob": -2.484375
+            },
+            {
+              "token": " France",
+              "logprob": -2.609375
+            },
+            {
+              "token": "\u00fcme",
+              "logprob": -3.671875
+            },
+            {
+              "token": " \u015fi",
+              "logprob": -3.734375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:L1+": {
+        "band": "L1+_null",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to and and and and and",
+          "first_steered_token": " and",
+          "first_steered_logprob": -2.484375,
+          "first_steered_top5": [
+            {
+              "token": " Generale",
+              "logprob": -2.484375
+            },
+            {
+              "token": " Switzerland",
+              "logprob": -2.484375
+            },
+            {
+              "token": " and",
+              "logprob": -2.484375
+            },
+            {
+              "token": " Germany",
+              "logprob": -3.109375
+            },
+            {
+              "token": " jQuery",
+              "logprob": -3.484375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true,
+        "sampled": [
+          [
+            22,
+            8560
+          ],
+          [
+            22,
+            15670
+          ],
+          [
+            18,
+            6875
+          ],
+          [
+            12,
+            12493
+          ],
+          [
+            10,
+            14174
+          ],
+          [
+            25,
+            15920
+          ],
+          [
+            25,
+            14744
+          ],
+          [
+            24,
+            5999
+          ],
+          [
+            24,
+            483
+          ],
+          [
+            10,
+            10933
+          ],
+          [
+            9,
+            15819
+          ],
+          [
+            25,
+            15221
+          ],
+          [
+            21,
+            4827
+          ],
+          [
+            24,
+            7241
+          ],
+          [
+            15,
+            11238
+          ],
+          [
+            18,
+            11952
+          ],
+          [
+            9,
+            2762
+          ],
+          [
+            17,
+            13553
+          ],
+          [
+            21,
+            5251
+          ],
+          [
+            24,
+            7100
+          ],
+          [
+            10,
+            12232
+          ],
+          [
+            21,
+            16080
+          ],
+          [
+            22,
+            3459
+          ],
+          [
+            22,
+            411
+          ],
+          [
+            20,
+            7507
+          ],
+          [
+            23,
+            11328
+          ],
+          [
+            13,
+            14536
+          ],
+          [
+            15,
+            10550
+          ],
+          [
+            20,
+            3325
+          ],
+          [
+            22,
+            7687
+          ],
+          [
+            23,
+            9990
+          ],
+          [
+            16,
+            12678
+          ],
+          [
+            25,
+            286
+          ],
+          [
+            24,
+            15918
+          ],
+          [
+            19,
+            855
+          ],
+          [
+            9,
+            8770
+          ],
+          [
+            25,
+            2725
+          ],
+          [
+            24,
+            15471
+          ],
+          [
+            11,
+            16076
+          ],
+          [
+            23,
+            7729
+          ],
+          [
+            24,
+            1963
+          ],
+          [
+            24,
+            11186
+          ],
+          [
+            9,
+            13483
+          ],
+          [
+            18,
+            7499
+          ],
+          [
+            9,
+            65
+          ],
+          [
+            14,
+            9994
+          ],
+          [
+            25,
+            11825
+          ],
+          [
+            18,
+            12174
+          ],
+          [
+            18,
+            13586
+          ],
+          [
+            17,
+            10872
+          ],
+          [
+            12,
+            16125
+          ],
+          [
+            20,
+            15686
+          ],
+          [
+            15,
+            8544
+          ],
+          [
+            20,
+            13541
+          ],
+          [
+            25,
+            323
+          ],
+          [
+            19,
+            411
+          ],
+          [
+            14,
+            5733
+          ],
+          [
+            7,
+            1020
+          ],
+          [
+            23,
+            2040
+          ],
+          [
+            11,
+            2279
+          ],
+          [
+            12,
+            1190
+          ],
+          [
+            14,
+            4256
+          ],
+          [
+            15,
+            2107
+          ],
+          [
+            17,
+            13508
+          ],
+          [
+            19,
+            5773
+          ],
+          [
+            22,
+            14738
+          ],
+          [
+            19,
+            14348
+          ],
+          [
+            24,
+            15252
+          ],
+          [
+            20,
+            12072
+          ],
+          [
+            15,
+            14741
+          ],
+          [
+            18,
+            3483
+          ],
+          [
+            21,
+            7482
+          ],
+          [
+            11,
+            3318
+          ],
+          [
+            15,
+            1019
+          ],
+          [
+            24,
+            1260
+          ],
+          [
+            6,
+            8629
+          ],
+          [
+            23,
+            961
+          ],
+          [
+            24,
+            4825
+          ],
+          [
+            24,
+            3213
+          ],
+          [
+            19,
+            11872
+          ],
+          [
+            25,
+            10179
+          ],
+          [
+            25,
+            2953
+          ],
+          [
+            24,
+            1367
+          ],
+          [
+            25,
+            16381
+          ],
+          [
+            15,
+            8266
+          ],
+          [
+            23,
+            8967
+          ],
+          [
+            22,
+            15891
+          ],
+          [
+            13,
+            7940
+          ],
+          [
+            2,
+            12276
+          ],
+          [
+            17,
+            8946
+          ],
+          [
+            18,
+            15940
+          ],
+          [
+            19,
+            5699
+          ],
+          [
+            23,
+            13255
+          ],
+          [
+            23,
+            6956
+          ],
+          [
+            2,
+            14886
+          ],
+          [
+            16,
+            12042
+          ],
+          [
+            13,
+            9888
+          ],
+          [
+            2,
+            6077
+          ],
+          [
+            19,
+            12303
+          ],
+          [
+            16,
+            16331
+          ],
+          [
+            23,
+            3320
+          ],
+          [
+            25,
+            10152
+          ],
+          [
+            25,
+            9340
+          ],
+          [
+            17,
+            14546
+          ],
+          [
+            15,
+            8095
+          ],
+          [
+            8,
+            2742
+          ],
+          [
+            12,
+            15847
+          ],
+          [
+            25,
+            1676
+          ],
+          [
+            22,
+            1813
+          ],
+          [
+            16,
+            4546
+          ],
+          [
+            10,
+            6237
+          ],
+          [
+            10,
+            9756
+          ],
+          [
+            23,
+            14864
+          ],
+          [
+            12,
+            4592
+          ],
+          [
+            4,
+            1395
+          ],
+          [
+            6,
+            3803
+          ],
+          [
+            24,
+            7498
+          ],
+          [
+            19,
+            6554
+          ],
+          [
+            13,
+            4159
+          ],
+          [
+            4,
+            3635
+          ],
+          [
+            24,
+            14452
+          ],
+          [
+            10,
+            16328
+          ],
+          [
+            9,
+            14785
+          ],
+          [
+            16,
+            12147
+          ],
+          [
+            25,
+            4350
+          ],
+          [
+            1,
+            1858
+          ],
+          [
+            18,
+            15009
+          ],
+          [
+            9,
+            13035
+          ],
+          [
+            12,
+            9093
+          ],
+          [
+            19,
+            12535
+          ],
+          [
+            18,
+            3240
+          ],
+          [
+            20,
+            411
+          ],
+          [
+            10,
+            96
+          ],
+          [
+            1,
+            8251
+          ],
+          [
+            23,
+            9585
+          ],
+          [
+            17,
+            526
+          ],
+          [
+            12,
+            12230
+          ],
+          [
+            23,
+            9822
+          ],
+          [
+            24,
+            3134
+          ],
+          [
+            15,
+            241
+          ]
+        ]
+      }
+    },
+    "analog_rome": {
+      "circuit:L0": {
+        "band": "L0",
+        "n": 40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to Italy.\n\nThe French",
+          "first_steered_token": " Italy",
+          "first_steered_logprob": -0.59375,
+          "first_steered_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.59375
+            },
+            {
+              "token": " the",
+              "logprob": -1.96875
+            },
+            {
+              "token": " Latin",
+              "logprob": -3.09375
+            },
+            {
+              "token": " Rome",
+              "logprob": -3.65625
+            },
+            {
+              "token": " London",
+              "logprob": -4.03125
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": false
+      },
+      "circuit:L1-L4": {
+        "band": "L1-L4",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to.\n\nThe is to",
+          "first_steered_token": ".",
+          "first_steered_logprob": -2.328125,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -2.328125
+            },
+            {
+              "token": " be",
+              "logprob": -2.828125
+            },
+            {
+              "token": "\n\n",
+              "logprob": -2.828125
+            },
+            {
+              "token": " the",
+              "logprob": -2.953125
+            },
+            {
+              "token": " France",
+              "logprob": -3.203125
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L5-L9": {
+        "band": "L5-L9",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to be ruled by, the",
+          "first_steered_token": " be",
+          "first_steered_logprob": -0.67578125,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -0.67578125
+            },
+            {
+              "token": " rule",
+              "logprob": -1.9296875
+            },
+            {
+              "token": " lead",
+              "logprob": -3.546875
+            },
+            {
+              "token": " govern",
+              "logprob": -3.921875
+            },
+            {
+              "token": " have",
+              "logprob": -4.5625
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L10+": {
+        "band": "L10+",
+        "n": 23,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to.\n\n\n\n",
+          "first_steered_token": ".",
+          "first_steered_logprob": -0.80859375,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -0.80859375
+            },
+            {
+              "token": " Europe",
+              "logprob": -1.8046875
+            },
+            {
+              "token": " ",
+              "logprob": -2.4375
+            },
+            {
+              "token": "\n",
+              "logprob": -2.4375
+            },
+            {
+              "token": "-",
+              "logprob": -3.59375
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L1+": {
+        "band": "L1+",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is toAddTagHelperAddTagHelperAddTagHelperAddTagHelperAddTagHelper",
+          "first_steered_token": "AddTagHelper",
+          "first_steered_logprob": -1.9453125,
+          "first_steered_top5": [
+            {
+              "token": "AddTagHelper",
+              "logprob": -1.9453125
+            },
+            {
+              "token": "Stacks",
+              "logprob": -2.4375
+            },
+            {
+              "token": " France",
+              "logprob": -2.625
+            },
+            {
+              "token": "\u00fcme",
+              "logprob": -3.6875
+            },
+            {
+              "token": " \u015fi",
+              "logprob": -3.75
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:L1+": {
+        "band": "L1+_null",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to,,,,,",
+          "first_steered_token": ",",
+          "first_steered_logprob": -0.322265625,
+          "first_steered_top5": [
+            {
+              "token": ",",
+              "logprob": -0.322265625
+            },
+            {
+              "token": " and",
+              "logprob": -1.6953125
+            },
+            {
+              "token": ".",
+              "logprob": -2.828125
+            },
+            {
+              "token": "-",
+              "logprob": -5.0625
+            },
+            {
+              "token": "$",
+              "logprob": -5.1875
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true,
+        "sampled": [
+          [
+            24,
+            483
+          ],
+          [
+            25,
+            14744
+          ],
+          [
+            25,
+            15920
+          ],
+          [
+            12,
+            12493
+          ],
+          [
+            10,
+            14174
+          ],
+          [
+            24,
+            5999
+          ],
+          [
+            24,
+            10139
+          ],
+          [
+            15,
+            11238
+          ],
+          [
+            9,
+            3056
+          ],
+          [
+            25,
+            13822
+          ],
+          [
+            20,
+            6648
+          ],
+          [
+            21,
+            5251
+          ],
+          [
+            21,
+            12427
+          ],
+          [
+            10,
+            12232
+          ],
+          [
+            20,
+            7507
+          ],
+          [
+            22,
+            7687
+          ],
+          [
+            17,
+            14495
+          ],
+          [
+            15,
+            10550
+          ],
+          [
+            25,
+            3204
+          ],
+          [
+            11,
+            16076
+          ],
+          [
+            24,
+            13490
+          ],
+          [
+            24,
+            7100
+          ],
+          [
+            25,
+            286
+          ],
+          [
+            21,
+            4321
+          ],
+          [
+            24,
+            15471
+          ],
+          [
+            20,
+            4402
+          ],
+          [
+            16,
+            12678
+          ],
+          [
+            9,
+            8770
+          ],
+          [
+            23,
+            11328
+          ],
+          [
+            23,
+            7063
+          ],
+          [
+            24,
+            16122
+          ],
+          [
+            24,
+            11186
+          ],
+          [
+            25,
+            2040
+          ],
+          [
+            23,
+            7729
+          ],
+          [
+            9,
+            13483
+          ],
+          [
+            25,
+            11825
+          ],
+          [
+            20,
+            3325
+          ],
+          [
+            20,
+            7666
+          ],
+          [
+            9,
+            65
+          ],
+          [
+            17,
+            8341
+          ],
+          [
+            16,
+            11007
+          ],
+          [
+            22,
+            3724
+          ],
+          [
+            23,
+            13914
+          ],
+          [
+            25,
+            10521
+          ],
+          [
+            18,
+            13586
+          ],
+          [
+            16,
+            5977
+          ],
+          [
+            7,
+            1020
+          ],
+          [
+            22,
+            716
+          ],
+          [
+            23,
+            3320
+          ],
+          [
+            11,
+            7025
+          ],
+          [
+            15,
+            8544
+          ],
+          [
+            22,
+            12202
+          ],
+          [
+            19,
+            14348
+          ],
+          [
+            15,
+            2107
+          ],
+          [
+            12,
+            1190
+          ],
+          [
+            19,
+            1233
+          ],
+          [
+            18,
+            3781
+          ],
+          [
+            21,
+            11272
+          ],
+          [
+            23,
+            2040
+          ],
+          [
+            18,
+            7499
+          ],
+          [
+            17,
+            14546
+          ],
+          [
+            23,
+            10032
+          ],
+          [
+            25,
+            7470
+          ],
+          [
+            15,
+            14741
+          ],
+          [
+            24,
+            15252
+          ],
+          [
+            19,
+            5100
+          ],
+          [
+            22,
+            7459
+          ],
+          [
+            25,
+            10179
+          ],
+          [
+            18,
+            3483
+          ],
+          [
+            22,
+            11652
+          ],
+          [
+            25,
+            15121
+          ],
+          [
+            20,
+            6257
+          ],
+          [
+            25,
+            4350
+          ],
+          [
+            13,
+            9888
+          ],
+          [
+            4,
+            7854
+          ],
+          [
+            2,
+            12276
+          ],
+          [
+            19,
+            11872
+          ],
+          [
+            12,
+            3032
+          ],
+          [
+            24,
+            3213
+          ],
+          [
+            19,
+            12303
+          ],
+          [
+            2,
+            14886
+          ],
+          [
+            19,
+            5699
+          ],
+          [
+            15,
+            241
+          ],
+          [
+            24,
+            15918
+          ],
+          [
+            18,
+            14335
+          ],
+          [
+            24,
+            4036
+          ],
+          [
+            16,
+            16331
+          ],
+          [
+            1,
+            15660
+          ],
+          [
+            23,
+            15229
+          ],
+          [
+            6,
+            8369
+          ],
+          [
+            22,
+            2808
+          ],
+          [
+            14,
+            4256
+          ],
+          [
+            21,
+            8983
+          ],
+          [
+            14,
+            11156
+          ],
+          [
+            6,
+            15096
+          ],
+          [
+            13,
+            7940
+          ],
+          [
+            12,
+            15847
+          ],
+          [
+            23,
+            233
+          ],
+          [
+            10,
+            9756
+          ],
+          [
+            24,
+            3134
+          ],
+          [
+            16,
+            283
+          ],
+          [
+            25,
+            1676
+          ],
+          [
+            25,
+            10152
+          ],
+          [
+            10,
+            6237
+          ],
+          [
+            12,
+            9093
+          ],
+          [
+            23,
+            10181
+          ],
+          [
+            5,
+            5318
+          ],
+          [
+            25,
+            9873
+          ],
+          [
+            2,
+            4997
+          ],
+          [
+            17,
+            839
+          ],
+          [
+            24,
+            4252
+          ],
+          [
+            21,
+            7764
+          ],
+          [
+            4,
+            1395
+          ],
+          [
+            9,
+            13780
+          ],
+          [
+            13,
+            4159
+          ],
+          [
+            13,
+            2033
+          ],
+          [
+            23,
+            5917
+          ],
+          [
+            20,
+            411
+          ],
+          [
+            25,
+            9340
+          ],
+          [
+            21,
+            8994
+          ],
+          [
+            10,
+            16328
+          ],
+          [
+            17,
+            8946
+          ],
+          [
+            24,
+            4233
+          ],
+          [
+            9,
+            14785
+          ],
+          [
+            9,
+            13035
+          ],
+          [
+            19,
+            411
+          ],
+          [
+            22,
+            14738
+          ],
+          [
+            1,
+            8251
+          ],
+          [
+            8,
+            10532
+          ],
+          [
+            18,
+            12621
+          ],
+          [
+            22,
+            1364
+          ],
+          [
+            13,
+            4435
+          ],
+          [
+            12,
+            4592
+          ],
+          [
+            8,
+            6462
+          ],
+          [
+            23,
+            4132
+          ],
+          [
+            23,
+            3015
+          ],
+          [
+            14,
+            7317
+          ],
+          [
+            25,
+            11998
+          ],
+          [
+            19,
+            12535
+          ],
+          [
+            24,
+            7929
+          ]
+        ]
+      }
+    },
+    "analog_tokyo": {
+      "circuit:L0": {
+        "band": "L0",
+        "n": 40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to Japan.\n\nThe French",
+          "first_steered_token": " Japan",
+          "first_steered_logprob": -0.126953125,
+          "first_steered_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.126953125
+            },
+            {
+              "token": " Tokyo",
+              "logprob": -3.25
+            },
+            {
+              "token": " the",
+              "logprob": -4.125
+            },
+            {
+              "token": " London",
+              "logprob": -4.375
+            },
+            {
+              "token": " Paris",
+              "logprob": -4.875
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": false
+      },
+      "circuit:L1-L4": {
+        "band": "L1-L4",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to.\n\nThe problem is",
+          "first_steered_token": ".",
+          "first_steered_logprob": -2.296875,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -2.296875
+            },
+            {
+              "token": " be",
+              "logprob": -2.796875
+            },
+            {
+              "token": " the",
+              "logprob": -2.921875
+            },
+            {
+              "token": ",",
+              "logprob": -3.296875
+            },
+            {
+              "token": "\n\n",
+              "logprob": -3.296875
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L5-L9": {
+        "band": "L5-L9",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to be built, and the",
+          "first_steered_token": " be",
+          "first_steered_logprob": -0.373046875,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -0.373046875
+            },
+            {
+              "token": " live",
+              "logprob": -4.25
+            },
+            {
+              "token": " the",
+              "logprob": -4.25
+            },
+            {
+              "token": " do",
+              "logprob": -4.375
+            },
+            {
+              "token": " win",
+              "logprob": -4.625
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L10+": {
+        "band": "L10+",
+        "n": 23,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to.\n\n\n\n",
+          "first_steered_token": ".",
+          "first_steered_logprob": -0.8984375,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -0.8984375
+            },
+            {
+              "token": " Europe",
+              "logprob": -1.7109375
+            },
+            {
+              "token": " ",
+              "logprob": -2.140625
+            },
+            {
+              "token": "\n",
+              "logprob": -2.453125
+            },
+            {
+              "token": "-",
+              "logprob": -3.734375
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L1+": {
+        "band": "L1+",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is toAddTagHelperAddTagHelperAddTagHelperAddTagHelperAddTagHelper",
+          "first_steered_token": "AddTagHelper",
+          "first_steered_logprob": -1.984375,
+          "first_steered_top5": [
+            {
+              "token": "AddTagHelper",
+              "logprob": -1.984375
+            },
+            {
+              "token": "Stacks",
+              "logprob": -2.484375
+            },
+            {
+              "token": " France",
+              "logprob": -2.671875
+            },
+            {
+              "token": "\u00fcme",
+              "logprob": -3.734375
+            },
+            {
+              "token": " \u015fi",
+              "logprob": -3.734375
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:L1+": {
+        "band": "L1+_null",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to,,,,,",
+          "first_steered_token": ",",
+          "first_steered_logprob": -0.5625,
+          "first_steered_top5": [
+            {
+              "token": ",",
+              "logprob": -0.5625
+            },
+            {
+              "token": " a",
+              "logprob": -2.3125
+            },
+            {
+              "token": " ",
+              "logprob": -2.6875
+            },
+            {
+              "token": " and",
+              "logprob": -2.8125
+            },
+            {
+              "token": ".",
+              "logprob": -3.1875
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true,
+        "sampled": [
+          [
+            24,
+            483
+          ],
+          [
+            25,
+            15920
+          ],
+          [
+            25,
+            14744
+          ],
+          [
+            10,
+            10933
+          ],
+          [
+            23,
+            11328
+          ],
+          [
+            9,
+            15819
+          ],
+          [
+            23,
+            850
+          ],
+          [
+            15,
+            11238
+          ],
+          [
+            9,
+            2762
+          ],
+          [
+            11,
+            3544
+          ],
+          [
+            23,
+            13914
+          ],
+          [
+            21,
+            5251
+          ],
+          [
+            25,
+            13822
+          ],
+          [
+            18,
+            5424
+          ],
+          [
+            20,
+            6648
+          ],
+          [
+            18,
+            9239
+          ],
+          [
+            25,
+            286
+          ],
+          [
+            20,
+            7507
+          ],
+          [
+            16,
+            12678
+          ],
+          [
+            13,
+            14536
+          ],
+          [
+            15,
+            10550
+          ],
+          [
+            22,
+            7687
+          ],
+          [
+            19,
+            9990
+          ],
+          [
+            25,
+            12223
+          ],
+          [
+            24,
+            11186
+          ],
+          [
+            20,
+            3325
+          ],
+          [
+            20,
+            11695
+          ],
+          [
+            11,
+            16076
+          ],
+          [
+            20,
+            1194
+          ],
+          [
+            21,
+            12003
+          ],
+          [
+            24,
+            6082
+          ],
+          [
+            25,
+            3420
+          ],
+          [
+            19,
+            411
+          ],
+          [
+            25,
+            3168
+          ],
+          [
+            22,
+            2056
+          ],
+          [
+            14,
+            10660
+          ],
+          [
+            18,
+            7499
+          ],
+          [
+            25,
+            15121
+          ],
+          [
+            16,
+            12727
+          ],
+          [
+            22,
+            1860
+          ],
+          [
+            23,
+            7729
+          ],
+          [
+            15,
+            8544
+          ],
+          [
+            23,
+            3320
+          ],
+          [
+            20,
+            4569
+          ],
+          [
+            18,
+            1764
+          ],
+          [
+            22,
+            9335
+          ],
+          [
+            14,
+            4256
+          ],
+          [
+            14,
+            5733
+          ],
+          [
+            7,
+            1020
+          ],
+          [
+            14,
+            9861
+          ],
+          [
+            24,
+            3134
+          ],
+          [
+            22,
+            4415
+          ],
+          [
+            21,
+            11849
+          ],
+          [
+            15,
+            1019
+          ],
+          [
+            25,
+            10152
+          ],
+          [
+            18,
+            3483
+          ],
+          [
+            23,
+            9822
+          ],
+          [
+            23,
+            3269
+          ],
+          [
+            25,
+            1676
+          ],
+          [
+            17,
+            3164
+          ],
+          [
+            17,
+            14546
+          ],
+          [
+            16,
+            283
+          ],
+          [
+            24,
+            8251
+          ],
+          [
+            25,
+            10179
+          ],
+          [
+            13,
+            7940
+          ],
+          [
+            19,
+            14348
+          ],
+          [
+            22,
+            16166
+          ],
+          [
+            21,
+            2264
+          ],
+          [
+            19,
+            11872
+          ],
+          [
+            15,
+            15269
+          ],
+          [
+            24,
+            15252
+          ],
+          [
+            6,
+            10660
+          ],
+          [
+            23,
+            10181
+          ],
+          [
+            6,
+            8369
+          ],
+          [
+            2,
+            14886
+          ],
+          [
+            17,
+            8946
+          ],
+          [
+            2,
+            6077
+          ],
+          [
+            16,
+            16331
+          ],
+          [
+            13,
+            9888
+          ],
+          [
+            12,
+            3032
+          ],
+          [
+            19,
+            12535
+          ],
+          [
+            22,
+            972
+          ],
+          [
+            15,
+            12668
+          ],
+          [
+            8,
+            2742
+          ],
+          [
+            12,
+            9093
+          ],
+          [
+            16,
+            12147
+          ],
+          [
+            22,
+            6037
+          ],
+          [
+            15,
+            7392
+          ],
+          [
+            25,
+            4350
+          ],
+          [
+            18,
+            15822
+          ],
+          [
+            10,
+            6237
+          ],
+          [
+            14,
+            15658
+          ],
+          [
+            12,
+            4592
+          ],
+          [
+            19,
+            5699
+          ],
+          [
+            22,
+            14418
+          ],
+          [
+            6,
+            3803
+          ],
+          [
+            12,
+            15847
+          ],
+          [
+            24,
+            4252
+          ],
+          [
+            25,
+            9873
+          ],
+          [
+            4,
+            1395
+          ],
+          [
+            12,
+            14015
+          ],
+          [
+            21,
+            7764
+          ],
+          [
+            12,
+            12476
+          ],
+          [
+            22,
+            14738
+          ],
+          [
+            13,
+            14076
+          ],
+          [
+            8,
+            6462
+          ],
+          [
+            20,
+            411
+          ],
+          [
+            21,
+            7687
+          ],
+          [
+            9,
+            14785
+          ],
+          [
+            15,
+            241
+          ],
+          [
+            23,
+            6956
+          ],
+          [
+            1,
+            1858
+          ],
+          [
+            9,
+            13035
+          ],
+          [
+            17,
+            11087
+          ],
+          [
+            1,
+            8251
+          ],
+          [
+            18,
+            3240
+          ],
+          [
+            7,
+            6335
+          ],
+          [
+            13,
+            10167
+          ],
+          [
+            23,
+            2040
+          ],
+          [
+            13,
+            4954
+          ],
+          [
+            18,
+            15009
+          ],
+          [
+            9,
+            110
+          ],
+          [
+            15,
+            13929
+          ],
+          [
+            6,
+            9865
+          ],
+          [
+            5,
+            7268
+          ],
+          [
+            13,
+            13885
+          ],
+          [
+            12,
+            12230
+          ],
+          [
+            8,
+            705
+          ],
+          [
+            7,
+            1980
+          ],
+          [
+            15,
+            3070
+          ],
+          [
+            13,
+            4435
+          ],
+          [
+            9,
+            9113
+          ],
+          [
+            2,
+            15262
+          ],
+          [
+            2,
+            3899
+          ],
+          [
+            24,
+            9604
+          ],
+          [
+            11,
+            48
+          ],
+          [
+            4,
+            9467
+          ],
+          [
+            17,
+            4321
+          ],
+          [
+            25,
+            10873
+          ],
+          [
+            17,
+            3437
+          ]
+        ]
+      }
+    },
+    "analog_teacher": {
+      "circuit:L0": {
+        "band": "L0",
+        "n": 40,
+        "result": {
+          "default_text": "<bos>Doctor is to hospital as teacher is to school.\n\nThe doctor",
+          "steered_text": "<bos>Doctor is to hospital as teacher is to be a teacher.\n\n",
+          "first_steered_token": " be",
+          "first_steered_logprob": -2.25,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -2.25
+            },
+            {
+              "token": " hospital",
+              "logprob": -2.375
+            },
+            {
+              "token": " the",
+              "logprob": -2.5
+            },
+            {
+              "token": " school",
+              "logprob": -2.875
+            },
+            {
+              "token": " teach",
+              "logprob": -3.25
+            }
+          ],
+          "first_default_token": " school",
+          "first_default_logprob": -0.57421875,
+          "first_default_top5": [
+            {
+              "token": " school",
+              "logprob": -0.57421875
+            },
+            {
+              "token": " student",
+              "logprob": -3.453125
+            },
+            {
+              "token": " ",
+              "logprob": -3.578125
+            },
+            {
+              "token": "...",
+              "logprob": -3.703125
+            },
+            {
+              "token": " college",
+              "logprob": -3.828125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L1-L4": {
+        "band": "L1-L4",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Doctor is to hospital as teacher is to school.\n\nThe doctor",
+          "steered_text": "<bos>Doctor is to hospital as teacher is to.\n\nThe doctor is",
+          "first_steered_token": ".",
+          "first_steered_logprob": -2.25,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -2.25
+            },
+            {
+              "token": " hospital",
+              "logprob": -2.5
+            },
+            {
+              "token": ",",
+              "logprob": -3.25
+            },
+            {
+              "token": " teach",
+              "logprob": -3.25
+            },
+            {
+              "token": "\n\n",
+              "logprob": -3.375
+            }
+          ],
+          "first_default_token": " school",
+          "first_default_logprob": -0.57421875,
+          "first_default_top5": [
+            {
+              "token": " school",
+              "logprob": -0.57421875
+            },
+            {
+              "token": " student",
+              "logprob": -3.453125
+            },
+            {
+              "token": " ",
+              "logprob": -3.578125
+            },
+            {
+              "token": "...",
+              "logprob": -3.703125
+            },
+            {
+              "token": " college",
+              "logprob": -3.828125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L5-L9": {
+        "band": "L5-L9",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Doctor is to hospital as teacher is to school.\n\nThe doctor",
+          "steered_text": "<bos>Doctor is to hospital as teacher is to be given\n\nThe world",
+          "first_steered_token": " be",
+          "first_steered_logprob": -2.28125,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -2.28125
+            },
+            {
+              "token": " heal",
+              "logprob": -2.65625
+            },
+            {
+              "token": " save",
+              "logprob": -2.78125
+            },
+            {
+              "token": " rule",
+              "logprob": -3.15625
+            },
+            {
+              "token": " the",
+              "logprob": -4.03125
+            }
+          ],
+          "first_default_token": " school",
+          "first_default_logprob": -0.57421875,
+          "first_default_top5": [
+            {
+              "token": " school",
+              "logprob": -0.57421875
+            },
+            {
+              "token": " student",
+              "logprob": -3.453125
+            },
+            {
+              "token": " ",
+              "logprob": -3.578125
+            },
+            {
+              "token": "...",
+              "logprob": -3.703125
+            },
+            {
+              "token": " college",
+              "logprob": -3.828125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L10+": {
+        "band": "L10+",
+        "n": 23,
+        "result": {
+          "default_text": "<bos>Doctor is to hospital as teacher is to school.\n\nThe doctor",
+          "steered_text": "<bos>Doctor is to hospital as teacher is to.\n\n\n\n",
+          "first_steered_token": ".",
+          "first_steered_logprob": -0.7890625,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -0.7890625
+            },
+            {
+              "token": "\n",
+              "logprob": -1.7265625
+            },
+            {
+              "token": " ",
+              "logprob": -2.40625
+            },
+            {
+              "token": " Europe",
+              "logprob": -2.84375
+            },
+            {
+              "token": "-",
+              "logprob": -3.84375
+            }
+          ],
+          "first_default_token": " school",
+          "first_default_logprob": -0.57421875,
+          "first_default_top5": [
+            {
+              "token": " school",
+              "logprob": -0.57421875
+            },
+            {
+              "token": " student",
+              "logprob": -3.453125
+            },
+            {
+              "token": " ",
+              "logprob": -3.578125
+            },
+            {
+              "token": "...",
+              "logprob": -3.703125
+            },
+            {
+              "token": " college",
+              "logprob": -3.828125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L1+": {
+        "band": "L1+",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Doctor is to hospital as teacher is to school.\n\nThe doctor",
+          "steered_text": "<bos>Doctor is to hospital as teacher is toAddTagHelperAddTagHelperAddTagHelperAddTagHelperAddTagHelper",
+          "first_steered_token": "AddTagHelper",
+          "first_steered_logprob": -1.875,
+          "first_steered_top5": [
+            {
+              "token": "AddTagHelper",
+              "logprob": -1.875
+            },
+            {
+              "token": "Stacks",
+              "logprob": -2.3125
+            },
+            {
+              "token": " France",
+              "logprob": -3.3125
+            },
+            {
+              "token": " \u015fi",
+              "logprob": -3.625
+            },
+            {
+              "token": "\u00fcme",
+              "logprob": -3.6875
+            }
+          ],
+          "first_default_token": " school",
+          "first_default_logprob": -0.57421875,
+          "first_default_top5": [
+            {
+              "token": " school",
+              "logprob": -0.57421875
+            },
+            {
+              "token": " student",
+              "logprob": -3.453125
+            },
+            {
+              "token": " ",
+              "logprob": -3.578125
+            },
+            {
+              "token": "...",
+              "logprob": -3.703125
+            },
+            {
+              "token": " college",
+              "logprob": -3.828125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:L1+": {
+        "band": "L1+_null",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Doctor is to hospital as teacher is to school.\n\nThe doctor",
+          "steered_text": "<bos>Doctor is to hospital as teacher is to Hospital Hospital Hospital Hospital Hospital",
+          "first_steered_token": " Hospital",
+          "first_steered_logprob": -1.4375,
+          "first_steered_top5": [
+            {
+              "token": " Hospital",
+              "logprob": -1.4375
+            },
+            {
+              "token": "Hospital",
+              "logprob": -2.1875
+            },
+            {
+              "token": " hospitals",
+              "logprob": -2.3125
+            },
+            {
+              "token": " hospital",
+              "logprob": -2.6875
+            },
+            {
+              "token": " Hospitals",
+              "logprob": -2.9375
+            }
+          ],
+          "first_default_token": " school",
+          "first_default_logprob": -0.57421875,
+          "first_default_top5": [
+            {
+              "token": " school",
+              "logprob": -0.57421875
+            },
+            {
+              "token": " student",
+              "logprob": -3.453125
+            },
+            {
+              "token": " ",
+              "logprob": -3.578125
+            },
+            {
+              "token": "...",
+              "logprob": -3.703125
+            },
+            {
+              "token": " college",
+              "logprob": -3.828125
+            }
+          ]
+        },
+        "disrupted": true,
+        "sampled": [
+          [
+            15,
+            851
+          ],
+          [
+            24,
+            5999
+          ],
+          [
+            17,
+            8783
+          ],
+          [
+            16,
+            10989
+          ],
+          [
+            13,
+            8128
+          ],
+          [
+            22,
+            15670
+          ],
+          [
+            11,
+            11186
+          ],
+          [
+            18,
+            6875
+          ],
+          [
+            12,
+            12493
+          ],
+          [
+            10,
+            14174
+          ],
+          [
+            17,
+            10485
+          ],
+          [
+            11,
+            9183
+          ],
+          [
+            9,
+            15819
+          ],
+          [
+            23,
+            5978
+          ],
+          [
+            10,
+            10933
+          ],
+          [
+            18,
+            11952
+          ],
+          [
+            9,
+            3056
+          ],
+          [
+            11,
+            10933
+          ],
+          [
+            16,
+            5197
+          ],
+          [
+            18,
+            1010
+          ],
+          [
+            23,
+            8967
+          ],
+          [
+            25,
+            11799
+          ],
+          [
+            21,
+            2655
+          ],
+          [
+            10,
+            12232
+          ],
+          [
+            9,
+            8770
+          ],
+          [
+            10,
+            6804
+          ],
+          [
+            9,
+            2762
+          ],
+          [
+            24,
+            14100
+          ],
+          [
+            24,
+            5668
+          ],
+          [
+            11,
+            3544
+          ],
+          [
+            16,
+            5700
+          ],
+          [
+            14,
+            1956
+          ],
+          [
+            25,
+            553
+          ],
+          [
+            21,
+            13210
+          ],
+          [
+            17,
+            9100
+          ],
+          [
+            25,
+            4975
+          ],
+          [
+            20,
+            6179
+          ],
+          [
+            24,
+            3865
+          ],
+          [
+            24,
+            10068
+          ],
+          [
+            10,
+            7106
+          ],
+          [
+            9,
+            13483
+          ],
+          [
+            10,
+            883
+          ],
+          [
+            15,
+            3343
+          ],
+          [
+            23,
+            1487
+          ],
+          [
+            22,
+            4751
+          ],
+          [
+            15,
+            1019
+          ],
+          [
+            19,
+            12813
+          ],
+          [
+            15,
+            15159
+          ],
+          [
+            22,
+            4006
+          ],
+          [
+            22,
+            2834
+          ],
+          [
+            15,
+            13802
+          ],
+          [
+            19,
+            7069
+          ],
+          [
+            25,
+            588
+          ],
+          [
+            9,
+            65
+          ],
+          [
+            24,
+            8718
+          ],
+          [
+            13,
+            14536
+          ],
+          [
+            20,
+            6781
+          ],
+          [
+            17,
+            7995
+          ],
+          [
+            23,
+            8449
+          ],
+          [
+            20,
+            11961
+          ],
+          [
+            24,
+            1260
+          ],
+          [
+            15,
+            14741
+          ],
+          [
+            23,
+            6306
+          ],
+          [
+            24,
+            2451
+          ],
+          [
+            6,
+            9865
+          ],
+          [
+            23,
+            5188
+          ],
+          [
+            23,
+            8799
+          ],
+          [
+            21,
+            9762
+          ],
+          [
+            9,
+            3569
+          ],
+          [
+            2,
+            131
+          ],
+          [
+            2,
+            147
+          ],
+          [
+            24,
+            7901
+          ],
+          [
+            24,
+            7575
+          ],
+          [
+            23,
+            13488
+          ],
+          [
+            22,
+            14126
+          ],
+          [
+            16,
+            9748
+          ],
+          [
+            7,
+            462
+          ],
+          [
+            19,
+            802
+          ],
+          [
+            15,
+            14835
+          ],
+          [
+            20,
+            11533
+          ],
+          [
+            18,
+            13586
+          ],
+          [
+            20,
+            2722
+          ],
+          [
+            23,
+            14326
+          ],
+          [
+            7,
+            15132
+          ],
+          [
+            14,
+            3207
+          ],
+          [
+            15,
+            11215
+          ],
+          [
+            22,
+            5015
+          ],
+          [
+            1,
+            3761
+          ],
+          [
+            25,
+            5146
+          ],
+          [
+            1,
+            4562
+          ],
+          [
+            23,
+            15293
+          ],
+          [
+            17,
+            14727
+          ],
+          [
+            18,
+            6532
+          ],
+          [
+            18,
+            12090
+          ],
+          [
+            21,
+            7585
+          ],
+          [
+            23,
+            12281
+          ],
+          [
+            19,
+            7782
+          ],
+          [
+            18,
+            9903
+          ],
+          [
+            18,
+            6647
+          ],
+          [
+            22,
+            11818
+          ],
+          [
+            22,
+            15975
+          ],
+          [
+            18,
+            15208
+          ],
+          [
+            24,
+            13657
+          ],
+          [
+            23,
+            57
+          ],
+          [
+            21,
+            7955
+          ],
+          [
+            8,
+            3099
+          ],
+          [
+            7,
+            5741
+          ],
+          [
+            11,
+            2279
+          ],
+          [
+            14,
+            15038
+          ],
+          [
+            11,
+            16076
+          ],
+          [
+            2,
+            15048
+          ],
+          [
+            1,
+            6846
+          ],
+          [
+            8,
+            15761
+          ],
+          [
+            4,
+            12474
+          ],
+          [
+            25,
+            475
+          ],
+          [
+            23,
+            10032
+          ],
+          [
+            17,
+            10412
+          ],
+          [
+            22,
+            13488
+          ],
+          [
+            4,
+            9036
+          ],
+          [
+            21,
+            13968
+          ],
+          [
+            22,
+            5909
+          ],
+          [
+            14,
+            2051
+          ],
+          [
+            6,
+            13357
+          ],
+          [
+            12,
+            3032
+          ],
+          [
+            17,
+            1955
+          ],
+          [
+            8,
+            8406
+          ],
+          [
+            21,
+            4390
+          ],
+          [
+            14,
+            3942
+          ],
+          [
+            19,
+            2898
+          ],
+          [
+            3,
+            5243
+          ],
+          [
+            8,
+            14441
+          ],
+          [
+            14,
+            15770
+          ],
+          [
+            21,
+            1648
+          ],
+          [
+            15,
+            13801
+          ],
+          [
+            19,
+            2059
+          ],
+          [
+            25,
+            10854
+          ],
+          [
+            17,
+            10620
+          ],
+          [
+            21,
+            11551
+          ],
+          [
+            23,
+            592
+          ],
+          [
+            9,
+            6399
+          ]
+        ]
+      }
+    },
+    "analog_bird": {
+      "circuit:L0": {
+        "band": "L0",
+        "n": 40,
+        "result": {
+          "default_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "steered_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "first_steered_token": " air",
+          "first_steered_logprob": -1.515625,
+          "first_steered_top5": [
+            {
+              "token": " air",
+              "logprob": -1.515625
+            },
+            {
+              "token": " the",
+              "logprob": -1.640625
+            },
+            {
+              "token": " sky",
+              "logprob": -1.765625
+            },
+            {
+              "token": " water",
+              "logprob": -2.015625
+            },
+            {
+              "token": " fish",
+              "logprob": -3.015625
+            }
+          ],
+          "first_default_token": " air",
+          "first_default_logprob": -2.578125,
+          "first_default_top5": [
+            {
+              "token": " air",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ____",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ________",
+              "logprob": -2.953125
+            },
+            {
+              "token": " ",
+              "logprob": -3.078125
+            },
+            {
+              "token": " the",
+              "logprob": -3.078125
+            }
+          ]
+        },
+        "disrupted": false
+      },
+      "circuit:L1-L4": {
+        "band": "L1-L4",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "steered_text": "<bos>Fish is to water as bird is to water as bird is to",
+          "first_steered_token": " water",
+          "first_steered_logprob": -1.7109375,
+          "first_steered_top5": [
+            {
+              "token": " water",
+              "logprob": -1.7109375
+            },
+            {
+              "token": ".",
+              "logprob": -2.328125
+            },
+            {
+              "token": " fish",
+              "logprob": -3.203125
+            },
+            {
+              "token": " is",
+              "logprob": -3.328125
+            },
+            {
+              "token": "\n\n",
+              "logprob": -3.453125
+            }
+          ],
+          "first_default_token": " air",
+          "first_default_logprob": -2.578125,
+          "first_default_top5": [
+            {
+              "token": " air",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ____",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ________",
+              "logprob": -2.953125
+            },
+            {
+              "token": " ",
+              "logprob": -3.078125
+            },
+            {
+              "token": " the",
+              "logprob": -3.078125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L5-L9": {
+        "band": "L5-L9",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "steered_text": "<bos>Fish is to water as bird is to be served on your head",
+          "first_steered_token": " be",
+          "first_steered_logprob": -1.4453125,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -1.4453125
+            },
+            {
+              "token": " fly",
+              "logprob": -1.7578125
+            },
+            {
+              "token": " fill",
+              "logprob": -3.3125
+            },
+            {
+              "token": " fish",
+              "logprob": -3.4375
+            },
+            {
+              "token": " live",
+              "logprob": -3.75
+            }
+          ],
+          "first_default_token": " air",
+          "first_default_logprob": -2.578125,
+          "first_default_top5": [
+            {
+              "token": " air",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ____",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ________",
+              "logprob": -2.953125
+            },
+            {
+              "token": " ",
+              "logprob": -3.078125
+            },
+            {
+              "token": " the",
+              "logprob": -3.078125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L10+": {
+        "band": "L10+",
+        "n": 23,
+        "result": {
+          "default_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "steered_text": "<bos>Fish is to water as bird is to.\n\n\n\n",
+          "first_steered_token": ".",
+          "first_steered_logprob": -0.80859375,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -0.80859375
+            },
+            {
+              "token": "\n",
+              "logprob": -2.125
+            },
+            {
+              "token": " Europe",
+              "logprob": -2.3125
+            },
+            {
+              "token": " ",
+              "logprob": -2.75
+            },
+            {
+              "token": " modell",
+              "logprob": -3.90625
+            }
+          ],
+          "first_default_token": " air",
+          "first_default_logprob": -2.578125,
+          "first_default_top5": [
+            {
+              "token": " air",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ____",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ________",
+              "logprob": -2.953125
+            },
+            {
+              "token": " ",
+              "logprob": -3.078125
+            },
+            {
+              "token": " the",
+              "logprob": -3.078125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:L1+": {
+        "band": "L1+",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "steered_text": "<bos>Fish is to water as bird is toAddTagHelperAddTagHelperAddTagHelperAddTagHelperAddTagHelper",
+          "first_steered_token": "AddTagHelper",
+          "first_steered_logprob": -2.234375,
+          "first_steered_top5": [
+            {
+              "token": "AddTagHelper",
+              "logprob": -2.234375
+            },
+            {
+              "token": "Stacks",
+              "logprob": -2.359375
+            },
+            {
+              "token": " France",
+              "logprob": -3.171875
+            },
+            {
+              "token": " \u015fi",
+              "logprob": -3.421875
+            },
+            {
+              "token": "\u00fcme",
+              "logprob": -3.609375
+            }
+          ],
+          "first_default_token": " air",
+          "first_default_logprob": -2.578125,
+          "first_default_top5": [
+            {
+              "token": " air",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ____",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ________",
+              "logprob": -2.953125
+            },
+            {
+              "token": " ",
+              "logprob": -3.078125
+            },
+            {
+              "token": " the",
+              "logprob": -3.078125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:L1+": {
+        "band": "L1+_null",
+        "n": 140,
+        "result": {
+          "default_text": "<bos>Fish is to water as bird is to air.\n\nThe fish",
+          "steered_text": "<bos>Fish is to water as bird is to nemici nemici nemici nemici nemici",
+          "first_steered_token": " nemici",
+          "first_steered_logprob": -2.515625,
+          "first_steered_top5": [
+            {
+              "token": " nemici",
+              "logprob": -2.515625
+            },
+            {
+              "token": " d\u00e9mocr",
+              "logprob": -2.640625
+            },
+            {
+              "token": "Vidite",
+              "logprob": -2.640625
+            },
+            {
+              "token": " scolaires",
+              "logprob": -3.390625
+            },
+            {
+              "token": "esp\u00f3\u0142",
+              "logprob": -3.390625
+            }
+          ],
+          "first_default_token": " air",
+          "first_default_logprob": -2.578125,
+          "first_default_top5": [
+            {
+              "token": " air",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ____",
+              "logprob": -2.578125
+            },
+            {
+              "token": " ________",
+              "logprob": -2.953125
+            },
+            {
+              "token": " ",
+              "logprob": -3.078125
+            },
+            {
+              "token": " the",
+              "logprob": -3.078125
+            }
+          ]
+        },
+        "disrupted": true,
+        "sampled": [
+          [
+            22,
+            15670
+          ],
+          [
+            22,
+            8560
+          ],
+          [
+            11,
+            11186
+          ],
+          [
+            18,
+            6875
+          ],
+          [
+            24,
+            5999
+          ],
+          [
+            12,
+            12493
+          ],
+          [
+            18,
+            5792
+          ],
+          [
+            15,
+            12472
+          ],
+          [
+            10,
+            14174
+          ],
+          [
+            9,
+            15819
+          ],
+          [
+            9,
+            3056
+          ],
+          [
+            10,
+            10933
+          ],
+          [
+            9,
+            2762
+          ],
+          [
+            11,
+            3544
+          ],
+          [
+            23,
+            8967
+          ],
+          [
+            10,
+            12232
+          ],
+          [
+            18,
+            15310
+          ],
+          [
+            10,
+            6804
+          ],
+          [
+            19,
+            10328
+          ],
+          [
+            23,
+            5978
+          ],
+          [
+            21,
+            13210
+          ],
+          [
+            18,
+            14713
+          ],
+          [
+            16,
+            6372
+          ],
+          [
+            18,
+            13557
+          ],
+          [
+            20,
+            3824
+          ],
+          [
+            25,
+            11799
+          ],
+          [
+            23,
+            16077
+          ],
+          [
+            15,
+            5131
+          ],
+          [
+            17,
+            11640
+          ],
+          [
+            20,
+            10134
+          ],
+          [
+            9,
+            8770
+          ],
+          [
+            22,
+            4252
+          ],
+          [
+            24,
+            8106
+          ],
+          [
+            13,
+            14536
+          ],
+          [
+            10,
+            7106
+          ],
+          [
+            19,
+            1254
+          ],
+          [
+            9,
+            13483
+          ],
+          [
+            14,
+            1956
+          ],
+          [
+            21,
+            7677
+          ],
+          [
+            25,
+            9155
+          ],
+          [
+            22,
+            4751
+          ],
+          [
+            24,
+            1391
+          ],
+          [
+            25,
+            4995
+          ],
+          [
+            21,
+            2655
+          ],
+          [
+            25,
+            11801
+          ],
+          [
+            21,
+            13968
+          ],
+          [
+            20,
+            7491
+          ],
+          [
+            15,
+            14741
+          ],
+          [
+            13,
+            8814
+          ],
+          [
+            25,
+            9975
+          ],
+          [
+            1,
+            3971
+          ],
+          [
+            15,
+            1806
+          ],
+          [
+            2,
+            14059
+          ],
+          [
+            15,
+            3343
+          ],
+          [
+            6,
+            9865
+          ],
+          [
+            7,
+            4805
+          ],
+          [
+            22,
+            13619
+          ],
+          [
+            24,
+            11315
+          ],
+          [
+            2,
+            10360
+          ],
+          [
+            24,
+            5668
+          ],
+          [
+            16,
+            2336
+          ],
+          [
+            25,
+            8163
+          ],
+          [
+            18,
+            6905
+          ],
+          [
+            25,
+            10179
+          ],
+          [
+            8,
+            3099
+          ],
+          [
+            24,
+            10068
+          ],
+          [
+            23,
+            6306
+          ],
+          [
+            24,
+            2820
+          ],
+          [
+            22,
+            2834
+          ],
+          [
+            19,
+            2455
+          ],
+          [
+            23,
+            7517
+          ],
+          [
+            18,
+            13586
+          ],
+          [
+            23,
+            8449
+          ],
+          [
+            14,
+            9877
+          ],
+          [
+            23,
+            9155
+          ],
+          [
+            7,
+            1020
+          ],
+          [
+            24,
+            4383
+          ],
+          [
+            2,
+            1839
+          ],
+          [
+            15,
+            3807
+          ],
+          [
+            16,
+            10495
+          ],
+          [
+            23,
+            5188
+          ],
+          [
+            5,
+            2267
+          ],
+          [
+            14,
+            15770
+          ],
+          [
+            9,
+            65
+          ],
+          [
+            1,
+            4784
+          ],
+          [
+            20,
+            16267
+          ],
+          [
+            6,
+            14611
+          ],
+          [
+            25,
+            8361
+          ],
+          [
+            3,
+            13078
+          ],
+          [
+            24,
+            2451
+          ],
+          [
+            14,
+            5378
+          ],
+          [
+            25,
+            12962
+          ],
+          [
+            4,
+            3504
+          ],
+          [
+            18,
+            6647
+          ],
+          [
+            25,
+            588
+          ],
+          [
+            24,
+            1260
+          ],
+          [
+            19,
+            8510
+          ],
+          [
+            23,
+            13488
+          ],
+          [
+            11,
+            2279
+          ],
+          [
+            4,
+            13402
+          ],
+          [
+            21,
+            12069
+          ],
+          [
+            20,
+            3732
+          ],
+          [
+            13,
+            13149
+          ],
+          [
+            16,
+            7670
+          ],
+          [
+            20,
+            1743
+          ],
+          [
+            25,
+            7970
+          ],
+          [
+            6,
+            8369
+          ],
+          [
+            22,
+            3143
+          ],
+          [
+            9,
+            13649
+          ],
+          [
+            12,
+            3032
+          ],
+          [
+            15,
+            14084
+          ],
+          [
+            25,
+            10152
+          ],
+          [
+            17,
+            3164
+          ],
+          [
+            12,
+            9093
+          ],
+          [
+            23,
+            9764
+          ],
+          [
+            17,
+            10412
+          ],
+          [
+            23,
+            3280
+          ],
+          [
+            6,
+            1489
+          ],
+          [
+            11,
+            10034
+          ],
+          [
+            25,
+            2786
+          ],
+          [
+            3,
+            373
+          ],
+          [
+            11,
+            7025
+          ],
+          [
+            19,
+            11646
+          ],
+          [
+            16,
+            9155
+          ],
+          [
+            14,
+            4646
+          ],
+          [
+            24,
+            11987
+          ],
+          [
+            8,
+            4440
+          ],
+          [
+            24,
+            10662
+          ],
+          [
+            6,
+            13542
+          ],
+          [
+            8,
+            5926
+          ],
+          [
+            12,
+            12230
+          ],
+          [
+            17,
+            5164
+          ],
+          [
+            2,
+            11219
+          ],
+          [
+            19,
+            14160
+          ],
+          [
+            23,
+            15293
+          ],
+          [
+            10,
+            9756
+          ],
+          [
+            23,
+            57
+          ],
+          [
+            7,
+            9711
+          ],
+          [
+            13,
+            13885
+          ],
+          [
+            3,
+            4987
+          ]
+        ]
+      }
+    }
+  },
+  "B": {
+    "analog_berlin": {
+      "circuit:-2": {
+        "cond": "circuit",
+        "strength": -2,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0294189453125,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0294189453125
+            },
+            {
+              "token": " and",
+              "logprob": -4.15625
+            },
+            {
+              "token": " is",
+              "logprob": -4.90625
+            },
+            {
+              "token": ",",
+              "logprob": -7.03125
+            },
+            {
+              "token": " along",
+              "logprob": -7.46875
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-2": {
+        "cond": "null",
+        "strength": -2,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to similar similar similar similar similar",
+          "first_steered_token": " similar",
+          "first_steered_logprob": -0.6171875,
+          "first_steered_top5": [
+            {
+              "token": " similar",
+              "logprob": -0.6171875
+            },
+            {
+              "token": " Romains",
+              "logprob": -1.7421875
+            },
+            {
+              "token": " like",
+              "logprob": -2.359375
+            },
+            {
+              "token": " semblable",
+              "logprob": -3.234375
+            },
+            {
+              "token": "Similar",
+              "logprob": -4.625
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-5": {
+        "cond": "circuit",
+        "strength": -5,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0245361328125,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0245361328125
+            },
+            {
+              "token": " and",
+              "logprob": -4.40625
+            },
+            {
+              "token": " is",
+              "logprob": -4.65625
+            },
+            {
+              "token": ",",
+              "logprob": -7.84375
+            },
+            {
+              "token": " along",
+              "logprob": -8.5
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-5": {
+        "cond": "null",
+        "strength": -5,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to similar similar similar similar similar",
+          "first_steered_token": " similar",
+          "first_steered_logprob": -0.66796875,
+          "first_steered_top5": [
+            {
+              "token": " similar",
+              "logprob": -0.66796875
+            },
+            {
+              "token": " Romains",
+              "logprob": -1.921875
+            },
+            {
+              "token": " like",
+              "logprob": -2.171875
+            },
+            {
+              "token": " semblable",
+              "logprob": -2.921875
+            },
+            {
+              "token": " for",
+              "logprob": -4.34375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-10": {
+        "cond": "circuit",
+        "strength": -10,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0269775390625,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0269775390625
+            },
+            {
+              "token": " and",
+              "logprob": -4.28125
+            },
+            {
+              "token": " is",
+              "logprob": -4.53125
+            },
+            {
+              "token": ",",
+              "logprob": -7.84375
+            },
+            {
+              "token": " along",
+              "logprob": -8.8125
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-10": {
+        "cond": "null",
+        "strength": -10,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to similar similar similar similar similar",
+          "first_steered_token": " similar",
+          "first_steered_logprob": -0.6328125,
+          "first_steered_top5": [
+            {
+              "token": " similar",
+              "logprob": -0.6328125
+            },
+            {
+              "token": " Romains",
+              "logprob": -2.125
+            },
+            {
+              "token": " like",
+              "logprob": -2.125
+            },
+            {
+              "token": " semblable",
+              "logprob": -2.875
+            },
+            {
+              "token": " for",
+              "logprob": -4.25
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-20": {
+        "cond": "circuit",
+        "strength": -20,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0299072265625,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0299072265625
+            },
+            {
+              "token": " and",
+              "logprob": -4.15625
+            },
+            {
+              "token": " is",
+              "logprob": -4.40625
+            },
+            {
+              "token": ",",
+              "logprob": -7.96875
+            },
+            {
+              "token": "  ",
+              "logprob": -8.9375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-20": {
+        "cond": "null",
+        "strength": -20,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to similar similar similar similar similar",
+          "first_steered_token": " similar",
+          "first_steered_logprob": -0.6796875,
+          "first_steered_top5": [
+            {
+              "token": " similar",
+              "logprob": -0.6796875
+            },
+            {
+              "token": " Romains",
+              "logprob": -2.046875
+            },
+            {
+              "token": " like",
+              "logprob": -2.171875
+            },
+            {
+              "token": " semblable",
+              "logprob": -2.796875
+            },
+            {
+              "token": " for",
+              "logprob": -4.1875
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-40": {
+        "cond": "circuit",
+        "strength": -40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0299072265625,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0299072265625
+            },
+            {
+              "token": " and",
+              "logprob": -4.15625
+            },
+            {
+              "token": " is",
+              "logprob": -4.40625
+            },
+            {
+              "token": ",",
+              "logprob": -7.90625
+            },
+            {
+              "token": "  ",
+              "logprob": -9
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-40": {
+        "cond": "null",
+        "strength": -40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to similar similar similar similar similar",
+          "first_steered_token": " similar",
+          "first_steered_logprob": -0.6953125,
+          "first_steered_top5": [
+            {
+              "token": " similar",
+              "logprob": -0.6953125
+            },
+            {
+              "token": " Romains",
+              "logprob": -2.0625
+            },
+            {
+              "token": " like",
+              "logprob": -2.0625
+            },
+            {
+              "token": " semblable",
+              "logprob": -2.9375
+            },
+            {
+              "token": " for",
+              "logprob": -4.0625
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true
+      }
+    },
+    "analog_tokyo": {
+      "circuit:-2": {
+        "cond": "circuit",
+        "strength": -2,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.026611328125,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.026611328125
+            },
+            {
+              "token": " and",
+              "logprob": -4.28125
+            },
+            {
+              "token": " is",
+              "logprob": -5.03125
+            },
+            {
+              "token": ",",
+              "logprob": -7.09375
+            },
+            {
+              "token": " along",
+              "logprob": -7.46875
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-2": {
+        "cond": "null",
+        "strength": -2,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to onPostExecute onPostExecute onPostExecute onPostExecute onPostExecute",
+          "first_steered_token": " onPostExecute",
+          "first_steered_logprob": -1.109375,
+          "first_steered_top5": [
+            {
+              "token": " onPostExecute",
+              "logprob": -1.109375
+            },
+            {
+              "token": " to",
+              "logprob": -1.484375
+            },
+            {
+              "token": "ArrowToggle",
+              "logprob": -3.109375
+            },
+            {
+              "token": " Tra",
+              "logprob": -3.109375
+            },
+            {
+              "token": " on",
+              "logprob": -3.359375
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-5": {
+        "cond": "circuit",
+        "strength": -5,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0245361328125,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0245361328125
+            },
+            {
+              "token": " and",
+              "logprob": -4.40625
+            },
+            {
+              "token": " is",
+              "logprob": -4.65625
+            },
+            {
+              "token": ",",
+              "logprob": -7.84375
+            },
+            {
+              "token": " along",
+              "logprob": -8.5
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-5": {
+        "cond": "null",
+        "strength": -5,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to onPostExecute onPostExecute onPostExecute onPostExecute onPostExecute",
+          "first_steered_token": " onPostExecute",
+          "first_steered_logprob": -1.1171875,
+          "first_steered_top5": [
+            {
+              "token": " onPostExecute",
+              "logprob": -1.1171875
+            },
+            {
+              "token": " to",
+              "logprob": -1.3671875
+            },
+            {
+              "token": " Tra",
+              "logprob": -2.984375
+            },
+            {
+              "token": " on",
+              "logprob": -3.359375
+            },
+            {
+              "token": "ArrowToggle",
+              "logprob": -3.484375
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-10": {
+        "cond": "circuit",
+        "strength": -10,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0289306640625,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0289306640625
+            },
+            {
+              "token": " and",
+              "logprob": -4.15625
+            },
+            {
+              "token": " is",
+              "logprob": -4.53125
+            },
+            {
+              "token": ",",
+              "logprob": -7.96875
+            },
+            {
+              "token": " along",
+              "logprob": -8.6875
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-10": {
+        "cond": "null",
+        "strength": -10,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to onPostExecute onPostExecute onPostExecute onPostExecute onPostExecute",
+          "first_steered_token": " onPostExecute",
+          "first_steered_logprob": -1.203125,
+          "first_steered_top5": [
+            {
+              "token": " onPostExecute",
+              "logprob": -1.203125
+            },
+            {
+              "token": " to",
+              "logprob": -1.328125
+            },
+            {
+              "token": " Tra",
+              "logprob": -2.953125
+            },
+            {
+              "token": " on",
+              "logprob": -3.328125
+            },
+            {
+              "token": "ContextHolder",
+              "logprob": -3.640625
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-20": {
+        "cond": "circuit",
+        "strength": -20,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0301513671875,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0301513671875
+            },
+            {
+              "token": " and",
+              "logprob": -4.15625
+            },
+            {
+              "token": " is",
+              "logprob": -4.40625
+            },
+            {
+              "token": ",",
+              "logprob": -7.84375
+            },
+            {
+              "token": "  ",
+              "logprob": -8.8125
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-20": {
+        "cond": "null",
+        "strength": -20,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to onPostExecute onPostExecute onPostExecute onPostExecute onPostExecute",
+          "first_steered_token": " onPostExecute",
+          "first_steered_logprob": -1.203125,
+          "first_steered_top5": [
+            {
+              "token": " onPostExecute",
+              "logprob": -1.203125
+            },
+            {
+              "token": " to",
+              "logprob": -1.328125
+            },
+            {
+              "token": " Tra",
+              "logprob": -2.953125
+            },
+            {
+              "token": " on",
+              "logprob": -3.203125
+            },
+            {
+              "token": "ContextHolder",
+              "logprob": -3.640625
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "circuit:-40": {
+        "cond": "circuit",
+        "strength": -40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to to to to to to",
+          "first_steered_token": " to",
+          "first_steered_logprob": -0.0299072265625,
+          "first_steered_top5": [
+            {
+              "token": " to",
+              "logprob": -0.0299072265625
+            },
+            {
+              "token": " and",
+              "logprob": -4.15625
+            },
+            {
+              "token": " is",
+              "logprob": -4.40625
+            },
+            {
+              "token": ",",
+              "logprob": -7.96875
+            },
+            {
+              "token": "  ",
+              "logprob": -8.9375
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      },
+      "null:-40": {
+        "cond": "null",
+        "strength": -40,
+        "result": {
+          "default_text": "<bos>Paris is to France as Tokyo is to Japan. It is the",
+          "steered_text": "<bos>Paris is to France as Tokyo is to onPostExecute onPostExecute onPostExecute onPostExecute onPostExecute",
+          "first_steered_token": " onPostExecute",
+          "first_steered_logprob": -1.203125,
+          "first_steered_top5": [
+            {
+              "token": " onPostExecute",
+              "logprob": -1.203125
+            },
+            {
+              "token": " to",
+              "logprob": -1.328125
+            },
+            {
+              "token": " Tra",
+              "logprob": -2.953125
+            },
+            {
+              "token": " on",
+              "logprob": -3.203125
+            },
+            {
+              "token": "ContextHolder",
+              "logprob": -3.640625
+            }
+          ],
+          "first_default_token": " Japan",
+          "first_default_logprob": -0.0181884765625,
+          "first_default_top5": [
+            {
+              "token": " Japan",
+              "logprob": -0.0181884765625
+            },
+            {
+              "token": " the",
+              "logprob": -5.65625
+            },
+            {
+              "token": "\u2026",
+              "logprob": -6.21875
+            },
+            {
+              "token": " Japanese",
+              "logprob": -6.28125
+            },
+            {
+              "token": "...",
+              "logprob": -6.78125
+            }
+          ]
+        },
+        "disrupted": true
+      }
+    }
+  },
+  "C": {
+    "analog_berlin": {
+      "P1": {
+        "cond": "P1",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to.\n\nThe problem is",
+          "first_steered_token": ".",
+          "first_steered_logprob": -2.375,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -2.375
+            },
+            {
+              "token": "\n\n",
+              "logprob": -3
+            },
+            {
+              "token": " be",
+              "logprob": -3.125
+            },
+            {
+              "token": " the",
+              "logprob": -3.125
+            },
+            {
+              "token": " for",
+              "logprob": -3.375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true,
+        "baseline_text": "<bos>Paris is to France as Berlin is to Germany. It is the"
+      },
+      "P2": {
+        "cond": "P2",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to be built, the capital",
+          "first_steered_token": " be",
+          "first_steered_logprob": -0.73828125,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -0.73828125
+            },
+            {
+              "token": " do",
+              "logprob": -3.609375
+            },
+            {
+              "token": " the",
+              "logprob": -3.734375
+            },
+            {
+              "token": " rule",
+              "logprob": -4.125
+            },
+            {
+              "token": " have",
+              "logprob": -4.5
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true,
+        "baseline_text": "<bos>Paris is to France as Berlin is to Germany. It is the"
+      },
+      "P1+P2": {
+        "cond": "P1+P2",
+        "n": 117,
+        "result": {
+          "default_text": "<bos>Paris is to France as Berlin is to Germany. It is the",
+          "steered_text": "<bos>Paris is to France as Berlin is to and to play to play",
+          "first_steered_token": " and",
+          "first_steered_logprob": -2.234375,
+          "first_steered_top5": [
+            {
+              "token": " and",
+              "logprob": -2.234375
+            },
+            {
+              "token": ",",
+              "logprob": -2.234375
+            },
+            {
+              "token": " to",
+              "logprob": -2.859375
+            },
+            {
+              "token": " is",
+              "logprob": -3.109375
+            },
+            {
+              "token": " play",
+              "logprob": -3.359375
+            }
+          ],
+          "first_default_token": " Germany",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Germany",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -4.40625
+            },
+            {
+              "token": " Berlin",
+              "logprob": -5.53125
+            },
+            {
+              "token": " German",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Europe",
+              "logprob": -6.09375
+            }
+          ]
+        },
+        "disrupted": true,
+        "baseline_text": "<bos>Paris is to France as Berlin is to Germany. It is the"
+      }
+    },
+    "analog_rome": {
+      "P1": {
+        "cond": "P1",
+        "n": 67,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to.\n\nThe is to",
+          "first_steered_token": ".",
+          "first_steered_logprob": -2.328125,
+          "first_steered_top5": [
+            {
+              "token": ".",
+              "logprob": -2.328125
+            },
+            {
+              "token": " be",
+              "logprob": -2.828125
+            },
+            {
+              "token": "\n\n",
+              "logprob": -2.828125
+            },
+            {
+              "token": " the",
+              "logprob": -2.953125
+            },
+            {
+              "token": " France",
+              "logprob": -3.203125
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true,
+        "baseline_text": "<bos>Paris is to France as Rome is to Italy. It is the"
+      },
+      "P2": {
+        "cond": "P2",
+        "n": 50,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to be ruled by, the",
+          "first_steered_token": " be",
+          "first_steered_logprob": -0.67578125,
+          "first_steered_top5": [
+            {
+              "token": " be",
+              "logprob": -0.67578125
+            },
+            {
+              "token": " rule",
+              "logprob": -1.9296875
+            },
+            {
+              "token": " lead",
+              "logprob": -3.546875
+            },
+            {
+              "token": " govern",
+              "logprob": -3.921875
+            },
+            {
+              "token": " have",
+              "logprob": -4.5625
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true,
+        "baseline_text": "<bos>Paris is to France as Rome is to Italy. It is the"
+      },
+      "P1+P2": {
+        "cond": "P1+P2",
+        "n": 117,
+        "result": {
+          "default_text": "<bos>Paris is to France as Rome is to Italy. It is the",
+          "steered_text": "<bos>Paris is to France as Rome is to, and to is to",
+          "first_steered_token": ",",
+          "first_steered_logprob": -1.921875,
+          "first_steered_top5": [
+            {
+              "token": ",",
+              "logprob": -1.921875
+            },
+            {
+              "token": " and",
+              "logprob": -2.421875
+            },
+            {
+              "token": " to",
+              "logprob": -2.921875
+            },
+            {
+              "token": " is",
+              "logprob": -3.046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.546875
+            }
+          ],
+          "first_default_token": " Italy",
+          "first_default_logprob": -0.04248046875,
+          "first_default_top5": [
+            {
+              "token": " Italy",
+              "logprob": -0.04248046875
+            },
+            {
+              "token": " the",
+              "logprob": -3.921875
+            },
+            {
+              "token": " Rome",
+              "logprob": -6.03125
+            },
+            {
+              "token": " Italian",
+              "logprob": -6.09375
+            },
+            {
+              "token": " Italians",
+              "logprob": -6.40625
+            }
+          ]
+        },
+        "disrupted": true,
+        "baseline_text": "<bos>Paris is to France as Rome is to Italy. It is the"
+      }
+    }
+  },
+  "D": {
+    "heldout_vienna": {
+      "prompt": "Lisbon is to Portugal as Vienna is to",
+      "expected": "Austria",
+      "result": {
+        "default_text": "<bos>Lisbon is to Portugal as Vienna is to Austria. It is the",
+        "steered_text": "<bos>Lisbon is to Portugal as Vienna is to to to to to to",
+        "first_steered_token": " to",
+        "first_steered_logprob": -0.02978515625,
+        "first_steered_top5": [
+          {
+            "token": " to",
+            "logprob": -0.02978515625
+          },
+          {
+            "token": " and",
+            "logprob": -4.15625
+          },
+          {
+            "token": " is",
+            "logprob": -4.40625
+          },
+          {
+            "token": ",",
+            "logprob": -7.90625
+          },
+          {
+            "token": " extend",
+            "logprob": -8.875
+          }
+        ],
+        "first_default_token": " Austria",
+        "first_default_logprob": -0.044921875,
+        "first_default_top5": [
+          {
+            "token": " Austria",
+            "logprob": -0.044921875
+          },
+          {
+            "token": " the",
+            "logprob": -4.21875
+          },
+          {
+            "token": " Europe",
+            "logprob": -5.53125
+          },
+          {
+            "token": " Vienna",
+            "logprob": -5.84375
+          },
+          {
+            "token": " Hungary",
+            "logprob": -6.15625
+          }
+        ]
+      },
+      "disrupted": true,
+      "baseline_text": "<bos>Lisbon is to Portugal as Vienna is to Austria. It is the"
+    },
+    "heldout_oslo": {
+      "prompt": "Athens is to Greece as Oslo is to",
+      "expected": "Norway",
+      "result": {
+        "default_text": "<bos>Athens is to Greece as Oslo is to Norway. It is the",
+        "steered_text": "<bos>Athens is to Greece as Oslo is to to to to to to",
+        "first_steered_token": " to",
+        "first_steered_logprob": -0.0299072265625,
+        "first_steered_top5": [
+          {
+            "token": " to",
+            "logprob": -0.0299072265625
+          },
+          {
+            "token": " and",
+            "logprob": -4.15625
+          },
+          {
+            "token": " is",
+            "logprob": -4.40625
+          },
+          {
+            "token": ",",
+            "logprob": -7.90625
+          },
+          {
+            "token": "  ",
+            "logprob": -8.625
+          }
+        ],
+        "first_default_token": " Norway",
+        "first_default_logprob": -0.0888671875,
+        "first_default_top5": [
+          {
+            "token": " Norway",
+            "logprob": -0.0888671875
+          },
+          {
+            "token": " Scandinavia",
+            "logprob": -3.96875
+          },
+          {
+            "token": " Denmark",
+            "logprob": -3.96875
+          },
+          {
+            "token": " the",
+            "logprob": -4.34375
+          },
+          {
+            "token": " Sweden",
+            "logprob": -5.46875
+          }
+        ]
+      },
+      "disrupted": true,
+      "baseline_text": "<bos>Athens is to Greece as Oslo is to Norway. It is the"
+    },
+    "heldout_knife": {
+      "prompt": "Pen is to writing as knife is to",
+      "expected": "cutting",
+      "result": {
+        "default_text": "<bos>Pen is to writing as knife is to cutting.\n\nI\u2019",
+        "steered_text": "<bos>Pen is to writing as knife is to to to to to to",
+        "first_steered_token": " to",
+        "first_steered_logprob": -0.0263671875,
+        "first_steered_top5": [
+          {
+            "token": " to",
+            "logprob": -0.0263671875
+          },
+          {
+            "token": " is",
+            "logprob": -4.40625
+          },
+          {
+            "token": " and",
+            "logprob": -4.40625
+          },
+          {
+            "token": ",",
+            "logprob": -7.96875
+          },
+          {
+            "token": "  ",
+            "logprob": -8.625
+          }
+        ],
+        "first_default_token": " cutting",
+        "first_default_logprob": -1.671875,
+        "first_default_top5": [
+          {
+            "token": " cutting",
+            "logprob": -1.671875
+          },
+          {
+            "token": " cooking",
+            "logprob": -1.671875
+          },
+          {
+            "token": " carving",
+            "logprob": -2.546875
+          },
+          {
+            "token": " food",
+            "logprob": -2.796875
+          },
+          {
+            "token": " writing",
+            "logprob": -3.296875
+          }
+        ]
+      },
+      "disrupted": true,
+      "baseline_text": "<bos>Pen is to writing as knife is to cutting.\n\nI\u2019"
+    },
+    "heldout_ant": {
+      "prompt": "Bee is to hive as ant is to",
+      "expected": "colony",
+      "result": {
+        "default_text": "<bos>Bee is to hive as ant is to?\n\n[User ",
+        "steered_text": "<bos>Bee is to hive as ant is to to to to to to",
+        "first_steered_token": " to",
+        "first_steered_logprob": -0.0264892578125,
+        "first_steered_top5": [
+          {
+            "token": " to",
+            "logprob": -0.0264892578125
+          },
+          {
+            "token": " and",
+            "logprob": -4.28125
+          },
+          {
+            "token": " is",
+            "logprob": -4.53125
+          },
+          {
+            "token": ",",
+            "logprob": -8.0625
+          },
+          {
+            "token": " extend",
+            "logprob": -8.75
+          }
+        ],
+        "first_default_token": "?",
+        "first_default_logprob": -1.96875,
+        "first_default_top5": [
+          {
+            "token": "?",
+            "logprob": -1.96875
+          },
+          {
+            "token": " ____",
+            "logprob": -2.21875
+          },
+          {
+            "token": " ________",
+            "logprob": -2.71875
+          },
+          {
+            "token": "\n\n",
+            "logprob": -2.84375
+          },
+          {
+            "token": "\n",
+            "logprob": -3.21875
+          }
+        ]
+      },
+      "disrupted": true,
+      "baseline_text": "<bos>Bee is to hive as ant is to?\n\n[User "
+    }
+  }
+}
