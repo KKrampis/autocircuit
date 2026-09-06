@@ -462,7 +462,7 @@ Section 2.4 groups representative SAE features by their automated labels and the
 
 The individual protocol comprised 45 calls: nine SAE features tested on five prompts. The tested set contained four Group 1 features (SAE L0/F11651, L1/F11356, L4/F10752, and L5/F9672), four Group 2 features (SAE L5/F5793, L5/F2141, L8/F13766, and L9/F13344), and one Group 3 feature (SAE L13/F10969). Nine calls changed the baseline first token. SAE L0/F11651 changed four prompts: Berlin, Rome, and Tokyo produced the target city name, and Bird produced "water." SAE L4/F10752 changed Teacher to "classroom" and Bird to "sky"; SAE L5/F9672 changed Bird to "sky"; and SAE L8/F13766 and L9/F13344 changed Bird to "fish" and "sky," respectively. The other 36 calls preserved the baseline first token. SAE L13/F10969, the only Group 3 feature tested individually, preserved the baseline on all five prompts.
 
-The collective protocol used five Group 1 SAE features—the four listed above plus SAE L2/F11475—and the four Group 2 SAE features. A fourth condition added SAE L13/F10969 to the combined Group 1+2 set.
+The collective protocol used five Group 1 SAE features—the four listed above plus SAE L2/F11475—and the four Group 2 SAE features.
 
 **Table 19:** First-token outputs under collective suppression of the selected SAE feature groups.
 
@@ -471,13 +471,12 @@ The collective protocol used five Group 1 SAE features—the four listed above p
 | All Group 2 (4 feat.) | SAE L5/F5793, L5/F2141, L8/F13766, L9/F13344 | **France** | **France** | **France** | be | fish |
 | All Group 1 (5 feat.) | SAE L0/F11651, L1/F11356, L4/F10752, L5/F9672, L2/F11475 | (empty) | (empty) | (empty) | to | to |
 | Group 1+2 (9 feat.) | All Group 1 + Group 2 | : | : | : | : | : |
-| Group 1+2+3 (10 feat.) | Group 1 + Group 2 + SAE L13/F10969 | : | : | : | be | : |
 
 *Collective suppression at a per-feature strength of −20. The table reports the first generated token; “(empty)” denotes a leading newline rather than a lexical token. Full outputs are recorded in `graph-analysis/anish/exp7_remaining_analogy_validation/collective_steering_results.json`.*
 
-All four collective conditions change the baseline first token on all five prompts. Group 2 suppression produces the same first token, "France," for the three capital prompts: the source-pair answer is retained while the target-pair answer is lost. This is the failure pattern expected if the selected Group 2 features contribute to transferring the relation from the demonstrated pair to the query pair. Group 1 suppression produces a leading newline for the capital prompts, while combined Group 1+2 suppression produces a colon for every prompt, showing that the selected groups have distinguishable collective effects.
+All three collective conditions change the baseline first token on all five prompts. Group 2 suppression produces the same first token, "France," for the three capital prompts: the source-pair answer is retained while the target-pair answer is lost. This is the failure pattern expected if the selected Group 2 features contribute to transferring the relation from the demonstrated pair to the query pair. Group 1 suppression produces a leading newline for the capital prompts, while combined Group 1+2 suppression produces a colon for every prompt, showing that the selected groups have distinguishable collective effects.
 
-The Group 2 SAE features preserve the baseline individually on all three high-confidence capital prompts but change those answers when suppressed together. This supports a distributed-contribution interpretation for the tested Group 2 set. Adding the single Group 3 SAE feature to Group 1+2 changes only the Teacher output, from a colon to "be." Because there is no Group-3-only collective condition, these experiments do not establish Group 3's role, an ordering among groups, or mediation between them.
+The Group 2 SAE features preserve the baseline individually on all three high-confidence capital prompts but change those answers when suppressed together. This supports a distributed-contribution interpretation for the tested Group 2 set. Because Group 3 was represented by only one individually tested SAE feature and was not isolated in a collective condition, these experiments do not establish Group 3's role, an ordering among groups, or mediation between them.
 
 #### 3.7.4 Interpretation and Limits
 
