@@ -470,11 +470,10 @@ The collective protocol used five Group 1 SAE features—the four listed above p
 |---|---|---|---|---|---|---|
 | All Group 2 (4 feat.) | SAE L5/F5793, L5/F2141, L8/F13766, L9/F13344 | **France** | **France** | **France** | be | fish |
 | All Group 1 (5 feat.) | SAE L0/F11651, L1/F11356, L4/F10752, L5/F9672, L2/F11475 | (empty) | (empty) | (empty) | to | to |
-| Group 1+2 (9 feat.) | All Group 1 + Group 2 | : | : | : | : | : |
 
 *Collective suppression at a per-feature strength of −20. The table reports the first generated token; “(empty)” denotes a leading newline rather than a lexical token. Full outputs are recorded in `graph-analysis/anish/exp7_remaining_analogy_validation/collective_steering_results.json`.*
 
-All three collective conditions change the baseline first token on all five prompts. Group 2 suppression produces the same first token, "France," for the three capital prompts: the source-pair answer is retained while the target-pair answer is lost. This is the failure pattern expected if the selected Group 2 features contribute to transferring the relation from the demonstrated pair to the query pair. Group 1 suppression produces a leading newline for the capital prompts, while combined Group 1+2 suppression produces a colon for every prompt, showing that the selected groups have distinguishable collective effects.
+Both collective conditions change the baseline first token on all five prompts. Group 2 suppression produces the same first token, "France," for the three capital prompts: the source-pair answer is retained while the target-pair answer is lost. This is the failure pattern expected if the selected Group 2 features contribute to transferring the relation from the demonstrated pair to the query pair. Group 1 suppression produces a leading newline for the capital prompts and "to" for the two semantic-role prompts, showing that the selected groups have distinguishable collective effects.
 
 The Group 2 SAE features preserve the baseline individually on all three high-confidence capital prompts but change those answers when suppressed together. This supports a distributed-contribution interpretation for the tested Group 2 set. Because Group 3 was represented by only one individually tested SAE feature and was not isolated in a collective condition, these experiments do not establish Group 3's role, an ordering among groups, or mediation between them.
 
