@@ -9,8 +9,6 @@ authors:
     url: "https://www.linkedin.com/in/olalekanjoshuaalagbe1000/"
   - name: "Joseph Lawrence"
     url: ""
-  - name: "Anish Maheshwar"
-    url: ""
   - name: "Konstantinos Krampis"
     url: "https://www.linkedin.com/in/kkrampis/"
 links:
@@ -35,7 +33,7 @@ bibtex: |
   @article{alagbe2026analogical,
     title   = {Mechanistic Interpretability of Analogical Reasoning in {Gemma-2-2B}:
                A Sparse Autoencoder Attribution Graph Analysis},
-    author  = {Alagbe, Olalekan and Lawrence, Joseph and Maheshwar, Anish and Krampis, Konstantinos},
+    author  = {Alagbe, Olalekan and Lawrence, Joseph and Krampis, Konstantinos},
     year    = {2026},
     month   = {March},
     note    = {Neuronpedia API gemmascope-transcoder-16k SAE analysis}
@@ -80,7 +78,7 @@ supplementary:
 
 We present a mechanistic analysis of analogical reasoning in Gemma-2-2B using Neuronpedia attribution graphs and Sparse Autoencoder (SAE) features. By generating and comparing five attribution graphs across structurally distinct analogical prompts, covering geographic analogies (*Paris - France → Berlin - ?*, *Rome - ?*, *Tokyo - ?*) and semantic role analogies (*Doctor - hospital → teacher - ?*, *Fish - water → bird - ?*), we identify a shared **analogical reasoning circuit** comprising 119 features active across all five prompts and 490 features active across at least three. Each feature is identified by a fixed *(layer, feature index)* pair, identifying circuits as lists of recurring internal model feature activation patterns that retain similar structure across analogical prompts.
 
-We discover dedicated analogy-encoding features at layers 5, 8, 9, and 13, including a feature at layer 5 labeled literally as **"analogies"** and a layer 8 feature encoding **"analogies or comparisons"** appearing across all graphs with high confidence. Early layers (0–4) contain circuit patterns tracking the "X is to Y as Z is to" pattern, while mid-to-late layers (5–13) house increasingly semantic representations of the relational structure. The circuit spans 21 of the model's 26 transformer layers and exhibits cross-domain generalization, with the same core features activating for both geographic and semantic role analogies. Causal validation via feature steering shows that ablating the 180-feature circuit — but not a size- and strength-matched random control — collapses the model to the bare analogy template across all five prompts; that this effect is not reducible to deletion of input-token features and reproduces on held-out analogies; and that Phase 2 features collectively implement the relational-transfer operation at the computational core of analogical reasoning.
+We discover dedicated analogy-encoding SAE features at layers 5, 8, 9, and 13, including a layer-5 SAE feature labeled literally as **"analogies"** and a layer-8 SAE feature labeled **"analogies or comparisons"** that appear across all graphs with high confidence. Early layers (0–4) contain patterns associated with the "X is to Y as Z is to" format, while features at layers 5–13 have labels associated with comparisons and relational structure. The recurring feature set spans 21 of the model's 26 transformer layers and appears in both geographic and semantic-role analogy graphs, consistent with a shared representation that is not limited to one semantic domain. In steering experiments, suppressing the 180-feature intervention set changes the baseline answer on all five prompts and produces "to" as the first token; the same-size random-feature condition also changes every baseline answer, leaving circuit specificity unresolved. Collective suppression of selected Group 2 SAE features makes all three capital-city prompts produce "France," the source-pair answer. This reproducible failure mode is consistent with Group 2 contributing to relational transfer, although it does not establish that Group 2 exclusively implements that operation.
 
 ---
 
@@ -151,17 +149,17 @@ We analyze three values of $k$. At $k=3$, we keep features appearing in at least
 
 The interpretable core features sort into three functional groups. We did not impose this grouping in advance; it emerged from the content of the Neuronpedia labels.
 
-**Semantic label analysis.** After retrieving Neuronpedia automated labels for the top recurring features, a consistent pattern emerged across layer depth. Features in layers 0–4 carry structural labels: "the word 'to'", "'to' followed by a verb", "the phrase 'it is to'". Features in layers 5–9 carry explicitly relational-semantic labels: "analogies", "analogies or comparisons", "comparison between two things". Features in layers 10–13 carry integrative labels: "comparisons between disciplines and relationships between concepts". The groups therefore emerge from the content of the labels rather than an arbitrary partition of layers; the associated layer ranges describe where each group concentrates, not sharp boundaries. This organization mirrors the emergent symbolic architecture documented by Webb et al. [9] for abstract reasoning more broadly, where early layers abstract tokens into relational variables, intermediate layers perform induction over those variables, and later layers retrieve the answer.
+**Semantic label analysis.** After retrieving Neuronpedia automated labels for the top recurring SAE features, we grouped labels by recurring vocabulary. Labels concentrated at layers 0–4 include "the word 'to'", "'to' followed by a verb", and "the phrase 'it is to'". Labels concentrated at layers 5–9 include "analogies", "analogies or comparisons", and "comparison between two things". Labels concentrated at layers 10–13 include "comparisons between disciplines and relationships between concepts". This progression from template-related to explicitly relational labels motivates the three-group interpretation and parallels prior accounts of multi-stage abstract reasoning [9]. The layer ranges describe concentrations rather than sharp boundaries, and the labels alone do not establish a sequence of computations.
 
 **Table 2:** The three functional feature groups. Each row is one group; the columns give the layer range where the group concentrates and its functional role. Group membership is defined by feature-label content, not by layer boundaries.
 
-| Group | Layer range | Role |
+| Group | Layer range | Representative label theme |
 | --- | --- | --- |
-| Structural | L0–L4 | Parsing the shape and format of the analogy |
-| Relational | L5–L9 | Recognizing the relational concept itself |
-| Integration | L10–L13 | Combining relation with domain knowledge |
+| 1 | L0–L4 | Template words and phrases |
+| 2 | L5–L9 | Analogies and comparisons |
+| 3 | L10–L13 | Relationships between concepts |
 
-**Causal validation.** Group boundaries were then tested causally via collective suppression experiments (§3.4), which confirmed that each group is collectively necessary and that earlier groups are prerequisites for later ones.
+**Steering evaluation.** Section 3.7.3 reports individual and collective suppression experiments on representative SAE features from these groups. These interventions measure how the model's output changes when the selected features are suppressed; they do not by themselves establish information flow between groups.
 
 ### 2.5 Discovery of Analogy-Concept Features
 
@@ -182,17 +180,17 @@ Group 2 is defined by two jointly applied criteria: **layer position (5–9)** a
 | L8 SAE#13766 | "analogies or comparisons" |
 | L9 SAE#13344 | "phrases suggesting uncertainty or comparison between two things" |
 
-This grouping is validated causally: suppressing all four Group 2 features simultaneously collapses all five circuits, with capital analogies producing "France" — the source-pair answer — rather than the target country. An arbitrary group definition would not produce such a consistent and semantically meaningful failure mode.
+When the four Group 2 SAE features are suppressed simultaneously, the output changes on all five prompts; the three capital-city prompts produce "France" rather than the baseline target country. Retaining the source-pair answer while losing the target-pair completion is consistent with these features contributing to relational transfer. Section 3.7.3 reports the full results and the limits of that interpretation.
 
 ### 2.7 Causal Validation via Feature Steering
 
-The cross-graph analysis (§2.3) identifies the 180-feature shared circuit as a *common* object: these features recur across all five analogy graphs. Recurrence does not establish that the circuit *causes* the model's answers — a recurring feature could be a passenger that co-activates with the computation without driving it. We test causation by intervening on the circuit with the Neuronpedia `/api/steer` endpoint [8] (`modelId: "gemma-2-2b"`, `strength_multiplier: 4`, `temperature: 0`, `seed: 42`).
+The cross-graph analysis (§2.3) identifies recurring SAE features, but recurrence alone does not establish their causal contribution to the model's answers. We therefore measured the effects of suppressing the 180-feature intervention set with the Neuronpedia `/api/steer` endpoint [8] (`modelId: "gemma-2-2b"`, `strength_multiplier: 4`, `temperature: 0`, `seed: 42`).
 
-One methodological fact governs the whole validation. The per-feature `strength` we set (−20 for ablation) is scaled by the global `strength_multiplier` of 4, so the effective intervention is **−80** per feature — a large perturbation. At that magnitude, removing *any* sizable feature set derails the model, so the bare observation "the output changed" (necessity) is necessary but **not sufficient** evidence that a particular circuit is responsible. The discriminating evidence is of two kinds: (i) a **matched contrast** — does ablating the circuit break the task differently from ablating a size- and strength-matched *random* set? — and (ii) a **predicted failure mode** — does the model fail in the specific way the circuit's claimed role implies? Our design is built on these rather than on necessity alone:
+The per-feature `strength` used for suppression (−20) is scaled by the global `strength_multiplier` of 4, yielding an effective coefficient of **−80** per SAE feature. Because this is a strong intervention, an output change alone is not evidence that the selected feature set is uniquely responsible for the original answer. We therefore report the intervention outputs directly and use a same-size random-feature comparison to evaluate specificity.
 
-1. **Circuit necessity vs. a matched null (primary).** For each of the five analogy prompts, run two ablations of identical size (180 features) and strength (−20): (a) all 180 circuit features, and (b) 180 random *non*-circuit features drawn from the same prompt's graph. The evidence is the contrast between them.
-2. **Internal structure (individual necessity).** Ablate each of the 180 features one at a time to locate the individually necessary members.
-3. **Robustness.** Layer-stratified ablation (is the effect just deletion of L0 token features?), a strength titration (is it an artifact of the large −80 magnitude?), and held-out analogy prompts the circuit was never derived from (does it generalize?).
+1. **Intervention set vs. a random-feature comparison.** For each prompt, suppress (a) the 180-feature intervention set and (b) 180 random non-circuit SAE features drawn from the same prompt's graph, using the same strength for both conditions.
+2. **Individual sensitivity.** Suppress each of the 180 SAE features separately and record whether the first-token prediction changes.
+3. **Robustness.** Measure layer-band sensitivity, repeat the intervention over a range of strengths, and apply the fixed intervention set to held-out analogy prompts.
 4. **Architecture.** Collective suppression of the Group 1 and Group 2 features (§2.4) to test the three-group organization.
 5. **Single-feature side-tests.** A sufficiency probe (boost the highest-influence hub) and an individual non-circuit specificity scan, reported as supplementary single-feature controls.
 
@@ -244,9 +242,9 @@ Cross-graph feature overlap analysis over the stable *(layer, feature index)* id
 
 <!-- figure:fig-circuit-flow -->
 
-**Figure 3:** Flow diagram of the three-group circuit, showing the input prompt, the representative features of Group 1, Group 2, and Group 3 with their Neuronpedia labels, and the model's output.
+**Figure 3:** Descriptive grouping of representative recurring SAE features by automated-label theme and layer concentration. The grouping does not establish a sequential flow of information.
 
-We provide evidence that Gemma-2-2B performs **genuine multi-step analogical reasoning internally**. The attribution graph reveals a three-group computational process that activates for both geographic and semantic role analogies — evidence of a domain-independence relational reasoning mechanism. This three-stage organization parallels the symbolic architecture identified by Webb et al. [9] through causal mediation analysis and the internal representation findings of Lee et al. [10].
+The recurring SAE features form a stable cross-prompt pattern that can be described using three functional groups. Representatives of these groups appear in both geographic and semantic-role analogy graphs, supporting the interpretation that the model reuses relational features across the tested domains. The shift from template-related labels in earlier layers to explicitly analogy-related labels in later layers is consistent with the symbolic architecture identified by Webb et al. [9] and the internal-representation findings of Lee et al. [10]. The attribution graphs alone, however, do not establish a three-stage causal process.
 
 ---
 
@@ -395,21 +393,15 @@ Despite the 50 prompts being phrased four different ways, the model consistently
 
 ### 3.7 Causal Validation via Feature Steering
 
-The preceding results are correlational. The attribution graphs indicate which features are active and influential when the model produces an answer, but not whether those features cause it. In this section we intervene on the features directly, suppressing and boosting them, to test whether the paper's structural findings hold causally.
+The attribution graphs show which SAE features are active and influential when the model produces an answer, but they do not establish whether those features contribute causally to that answer. We therefore used the Neuronpedia steering API to suppress selected SAE features and recorded the resulting first-token predictions.
 
-Suppression is performed with the Neuronpedia steering API, which intervenes on a feature by adding a multiple of its direction to the residual stream at that feature's layer; a negative multiple pushes the feature's contribution down and thereby ablates it. The size of the push is set by a per-feature `strength`, which the API then scales by a global `strength_multiplier`. We used a strength of −20 and the default multiplier of 4, so the coefficient applied to each feature was −80. This is a large intervention: the core circuit features have typical activation magnitudes between roughly 1.5 and 16 (§2.4), so a −80 coefficient pushes them well outside their normal operating range and effectively removes them from the computation.
+For each suppressed SAE feature, the API adds the feature direction to the residual stream with a per-feature `strength` of −20 and a global `strength_multiplier` of 4, yielding an effective coefficient of −80. This coefficient is substantially larger than the typical activation magnitudes of the selected features (approximately 1.5–16; §2.4). The experiments should therefore be read as strong perturbations rather than surgical removals of individual computations.
 
-This magnitude governs how every result below should be read (§2.7). Because the intervention is strong, ablating any sufficiently large set of features disrupts the model, so the fact that the output changed does not by itself identify the responsible circuit. We therefore rely on two forms of discriminating evidence. The first is a matched contrast, in which ablation of the circuit is compared against ablation of a random feature set of the same size and strength. The second is a predicted failure mode, in which we ask whether the model fails in the specific way the circuit's hypothesized role implies rather than in an arbitrary way.
+#### 3.7.1 Intervention-Set Suppression and Random-Feature Comparison
 
-#### 3.7.1 Is the Recurring Circuit Causally Load-Bearing?
+For each of the five prompts, we ran two conditions at the same per-feature strength: (A) suppression of the 180-feature intervention set and (B) suppression of 180 randomly selected non-circuit SAE features from the same prompt's attribution graph (seed 7). Condition B completed successfully; the issue is that it also removed the baseline answer on every prompt, so it did not function as a clean negative control.
 
-We tested whether the 180-feature shared circuit (§2.3) drives the answer or merely co-activates with it. For each prompt we ran two ablations of identical size (180 features) and strength (−20), differing only in which features were removed: (A) all 180 circuit features, and (B) 180 random non-circuit features drawn from the same prompt's graph (seed 7). Because the circuit is defined by its recurrence across the five prompts, we ran both ablations on all five.
-
-We call condition (B) the *matched null*. It is a control group of features, built to match the circuit in every respect that could trivially disrupt the model — the same number of features (180), the same steering strength, and features drawn from the same attribution graph — but composed of randomly chosen features instead of the recurring circuit. Its purpose is to answer one question: is the circuit *specifically* responsible for the answer, or would removing any 180 features do the same? The matched null is the negative control, or placebo, against which condition (A) is measured. It stands for the null hypothesis that the circuit is not special, so the circuit earns a causal interpretation only if ablating it produces an effect that ablating the null does not.
-
-If the circuit implements the analogical computation, removing it should leave the model unable to complete "X is to Y as Z is to ___." The model would then fall back on the template structure it can still represent and repeat the connective "to" rather than produce an answer. A random ablation has no reason to fail in this way.
-
-| Prompt | Baseline: model's answer | (A) Ablate the circuit (180 feat.) | (B) Ablate a matched random set (180 feat.) |
+| Prompt | Baseline: model's answer | (A) Suppress the intervention set (180 SAE feat.) | (B) Suppress a random set (180 SAE feat.) |
 |---|---|---|---|
 | Paris - France → Berlin - ? | Germany (96%) | **to (97%)** | Kyrie (6%, a name) |
 | Paris - France → Rome - ? | Italy (96%) | **to (97%)** | autorytatywna (44%, Polish) |
@@ -417,84 +409,85 @@ If the circuit implements the analogical computation, removing it should leave t
 | Doctor - hospital → teacher - ? | school (56%) | **to (97%)** | initComponents (45%, code) |
 | Fish - water → bird - ? | air (8%) | **to (97%)** | espère (73%, French) |
 
-*Table 15: How the two ablations fail. Both remove the model's correct answer, but ablating the circuit collapses every prompt to the same connective token "to" at ≈97% confidence, whereas ablating a matched random set produces a different idiosyncratic token each time (a name, a Polish word, a code identifier, a French word).*
+*Table 15: First-token outputs for the 180-feature intervention set and the same-size random-feature comparison. Both conditions remove the baseline answer on all five prompts. Condition A produces "to" at approximately 97% confidence in every case; condition B produces the five outputs shown above.*
 
-Two observations follow. First, both ablations remove the correct answer on all five prompts, confirming that at this strength the removal of 180 features of any kind disrupts the model and that necessity alone does not distinguish the circuit from a random set. Second, the two ablations fail in different ways. Circuit ablation produces a near-deterministic collapse to the connective "to" at the same confidence on every prompt (97%), for both geographic and semantic-role analogies. The matched null, applied to the same prompts at the same strength, produces a different idiosyncratic out-of-distribution token on each prompt, with no token shared across prompts and lower average confidence (26%); only one null run (Tokyo) reaches "to," and only at 14% confidence versus the circuit's 97%. Because the removed feature set is the only variable differing between (A) and (B), the structured collapse is attributable to the circuit rather than to the size of the intervention.
+Because both conditions remove the baseline answer, this experiment does not establish that the 180-feature set is selectively necessary. The consistent difference between the output patterns is an observation that motivates a better-matched or weaker control experiment; it is not treated here as proof of circuit specificity.
 
-One caveat should be stated directly. All five prompts end in the word "to" (for example, "…as Berlin is to"), and ablating the circuit makes the model output "to" — which is also the final word of the prompt. Two different explanations therefore predict the same token, and the output alone cannot separate them: the model may have lost the analogical computation and fallen back to the template connective "to" (the reading we intend), or it may simply be echoing the last word it was shown, as a broken model often does. What breaks the tie is the matched null, which faces the same "to"-final prompts but does not echo "to," emitting unrelated tokens instead. Ending in "to" is therefore not enough on its own to produce the collapse, so the effect is better explained by a loss of relational completion than by trivial token repetition.
+Nevertheless, the intervention-set result is highly reproducible: all five prompts converge on the same first token at nearly identical confidence, whereas the random sets produce prompt-dependent outputs and substantially more variable confidence. This supports the narrower conclusion that suppressing the selected set produces a stable intervention signature distinct from the observed random-set signatures. It does not determine whether that distinction is caused by circuit membership, differences in the sampled features, or the scale of the perturbation.
 
-We also examined the internal distribution of the effect by ablating each of the 180 features individually on the Berlin prompt. Only 24 of 180 features (13.3%) shift the prediction on their own, and these concentrate at the embedding layer (17 of 24 at L0; 42.5% of the L0 features tested, compared with 5.0% at L1 and above). The circuit is therefore internally redundant: necessity is a property of the set rather than of most individual members, and the individually necessary features are early template features such as L0/11651 ("the word 'to'").
+We also suppressed each of the 180 SAE features individually on the Berlin prompt. Twenty-four features (13.3%) changed the first-token prediction: 17 of the 40 features at L0 and 7 of the 140 features at L1 or above. The contrast between sparse individual effects and the uniform collective effect is consistent with the selected set having distributed or redundant influence. Because feature interactions were not measured directly, redundancy remains an interpretation rather than a demonstrated mechanism.
 
 #### 3.7.2 Robustness: Layer, Magnitude, and Generalization
 
-We first considered whether the effect is only the deletion of L0 token features. Forty of the 180 features lie at L0, the embedding layer, so suppressing them approximates deleting the entity tokens. If this accounted for the full effect, ablating only the L0 features would remove the answer. It does not. Ablating the circuit one layer band at a time gives:
+We first divided the 180 SAE features into layer bands and suppressed each band separately. We also suppressed the full set of 140 SAE features above L0.
 
 | Prompt | L0 only (40) | L1–L4 (67) | L5–L9 (50) | L10+ (23) | All non-L0 (140) |
 |---|---|---|---|---|---|
-| Berlin | ` Germany` ✓ | broke | broke | broke | broke |
-| Rome | ` Italy` ✓ | broke | broke | broke | broke |
-| Tokyo | ` Japan` ✓ | broke | broke | broke | broke |
-| Bird | ` air` ✓ | broke (→ water) | broke | broke | broke |
-| Teacher | broke | broke | broke | broke | broke |
+| Berlin | Germany (unchanged) | changed | changed | changed | changed |
+| Rome | Italy (unchanged) | changed | changed | changed | changed |
+| Tokyo | Japan (unchanged) | changed | changed | changed | changed |
+| Bird | air (unchanged) | water | changed | changed | changed |
+| Teacher | changed | changed | changed | changed | changed |
 
-*Table 16: Layer-band ablation of the circuit across the five prompts. Ablating only the 40 L0 embedding features leaves the answer intact on 4/5; the exception, teacher, has a weak baseline (p = 0.56).* Necessity is carried by the L1-and-above features, so the token-deletion explanation is insufficient: the causal weight lies in the relational mid- and late-layer features rather than the input-token representations. The bird prompt illustrates this further, in that L0 alone leaves "air" intact but the L1–L4 band reverts the answer to "water," the source-domain completion.
+*Table 16: Effect of suppressing the intervention set by layer band. The L0-only condition preserves the baseline first token on four prompts; every other listed condition changes it on all five prompts.*
 
-We next considered whether the effect is an artifact of the large −80 magnitude. A strength titration on Berlin and Tokyo sweeps the per-feature `strength` across −2, −5, −10, −20, and −40 — effective coefficients of −8 to −160 once the multiplier of 4 is applied — bracketing the −80 used above; the table below shows the two extremes:
+The intervention effect is therefore not confined to a single layer band. In particular, suppressing the 140 SAE features above L0 changes all five predictions, and each of the three non-L0 bands changes every prediction when tested separately. These results localize sensitivity across multiple portions of the feature set without assigning a specific computation to any layer band.
 
-**Table 17:** Model output and confidence for the circuit vs. matched-null ablation on the Berlin and Tokyo prompts, at the two extremes of the strength titration (per-feature −2 and −40).
+We next repeated the intervention-set and random-set conditions for Berlin and Tokyo at per-feature strengths of −2, −5, −10, −20, and −40, corresponding to effective coefficients from −8 to −160. Table 17 shows the endpoints.
 
-| per-feature strength (effective) | Berlin circuit | Berlin null | Tokyo circuit | Tokyo null |
+**Table 17:** Model output and confidence for the intervention set and random-feature comparison on the Berlin and Tokyo prompts, at the two extremes of the strength titration (per-feature −2 and −40).
+
+| per-feature strength (effective) | Berlin intervention set | Berlin random set | Tokyo intervention set | Tokyo random set |
 |---|---|---|---|---|
 | −2 (−8) | to (97%) | similar (54%) | to (97%) | onPostExecute (33%) |
 | −40 (−160) | to (97%) | similar (50%) | to (97%) | onPostExecute (30%) |
 
-The collapse to "to" is already complete at the weakest setting tested (−2, an effective −8), and the circuit-versus-null distinction holds unchanged across the full 20× range. The effect is therefore not specific to the −80 intervention, though the flatness of the response across that range also indicates the behavioral readout saturates well below it.
+The intervention-set condition produces "to" throughout the tested 20-fold range, showing that the intervention signature is robust to the chosen magnitude and is already saturated at the weakest tested coefficient. The sweep does not locate the response threshold, and the random-set condition also fails to preserve the baseline answer at the displayed endpoints. The result therefore supports magnitude-robustness of the observed signature, not circuit specificity.
 
-Finally, we tested whether the circuit generalizes beyond its defining prompts. The 180 features were derived from five specific prompts. We applied the fixed circuit to three held-out analogies from which it was not derived:
+Finally, we tested whether the intervention output recurs beyond the five prompts used to construct the 180-feature set. We applied the fixed set to three held-out analogies:
 
-**Table 18:** Baseline completions and circuit-ablation outputs for three held-out analogy prompts not used to derive the circuit.
+**Table 18:** Baseline completions and intervention-set outputs for three held-out analogy prompts not used to construct the feature set.
 
-| Held-out prompt | Baseline | Circuit ablation |
+| Held-out prompt | Baseline | Intervention-set suppression |
 |---|---|---|
 | Lisbon…Vienna is to | Austria | to (97%) |
 | Athens…Oslo is to | Norway | to (97%) |
 | Pen…knife is to | cutting | to (97%) |
 
-The same collapse to "to" (97%) appears on all three prompts, indicating that the circuit signature is not specific to the defining set.
+The intervention produces "to" at 97% confidence on all three held-out prompts. Reproducing the same high-confidence output on prompts that were not used to construct the feature set supports generalization of the intervention signature beyond the defining examples. Because no random-feature comparison was run for the held-out prompts, the experiment does not independently establish specificity on this set.
 
-#### 3.7.3 The Three-Group Architecture
+#### 3.7.3 Suppression of Representative SAE Feature Groups
 
-Sections 3.7.1 and 3.7.2 establish that the recurring circuit causally drives the model's answer, rather than merely co-occurring with it. A separate claim (§2.4) is that the circuit is organized into three groups. We tested this with group-level suppression of the representative features from each group, across all five prompts.
+Section 2.4 groups representative SAE features by their automated labels and the layers in which they occur. We evaluated these selected features with two protocols, both using a per-feature strength of −20 (effective coefficient −80): individual suppression across all five prompts and collective suppression by group.
 
-Suppressing the nine key group features one at a time (45 tests) shows that the Group 2 "analogy" features are individually redundant on high-confidence prompts. A Group 1 template feature, L0/11651 ("the word 'to'"), is individually necessary in four of five circuits: suppressing it makes the capital analogies emit the city name itself rather than complete the analogy.
+The individual protocol comprised 45 calls: nine SAE features tested on five prompts. The tested set contained four Group 1 features (SAE L0/F11651, L1/F11356, L4/F10752, and L5/F9672), four Group 2 features (SAE L5/F5793, L5/F2141, L8/F13766, and L9/F13344), and one Group 3 feature (SAE L13/F10969). Nine calls changed the baseline first token. SAE L0/F11651 changed four prompts: Berlin, Rome, and Tokyo produced the target city name, and Bird produced "water." SAE L4/F10752 changed Teacher to "classroom" and Bird to "sky"; SAE L5/F9672 changed Bird to "sky"; and SAE L8/F13766 and L9/F13344 changed Bird to "fish" and "sky," respectively. The other 36 calls preserved the baseline first token. SAE L13/F10969, the only Group 3 feature tested individually, preserved the baseline on all five prompts.
 
-Collective group suppression provides the main architecture test:
+The collective protocol used five Group 1 SAE features—the four listed above plus SAE L2/F11475—and the four Group 2 SAE features. A fourth condition added SAE L13/F10969 to the combined Group 1+2 set.
 
-**Table 19:** Model output for each of the five prompts under collective suppression of the Group 2 features, the Group 1 features, and both groups combined.
+**Table 19:** First-token outputs under collective suppression of the selected SAE feature groups.
 
 | Experiment | Features | Berlin | Rome | Tokyo | Teacher | Bird |
 |---|---|---|---|---|---|---|
-| All Group 2 (4 feat.) | L5/5793, L5/2141, L8/13766, L9/13344 | **France** | **France** | **France** | be | fish |
-| All Group 1 (5 feat.) | L0/11651, L1/11356, L4/10752, L5/9672, L2/11475 | (empty) | (empty) | (empty) | to | to |
+| All Group 2 (4 feat.) | SAE L5/F5793, L5/F2141, L8/F13766, L9/F13344 | **France** | **France** | **France** | be | fish |
+| All Group 1 (5 feat.) | SAE L0/F11651, L1/F11356, L4/F10752, L5/F9672, L2/F11475 | (empty) | (empty) | (empty) | to | to |
 | Group 1+2 (9 feat.) | All Group 1 + Group 2 | : | : | : | : | : |
+| Group 1+2+3 (10 feat.) | Group 1 + Group 2 + SAE L13/F10969 | : | : | : | be | : |
 
-*Collective group suppression at strength −20. Suppressing both groups together degenerates the output to bare punctuation on all five prompts. Full results: `graph-analysis/anish/exp7_remaining_analogy_validation/collective_steering_results.json`.*
+*Collective suppression at a per-feature strength of −20. The table reports the first generated token; “(empty)” denotes a leading newline rather than a lexical token. Full outputs are recorded in `graph-analysis/anish/exp7_remaining_analogy_validation/collective_steering_results.json`.*
 
-Suppressing all four Group 2 features makes the three capital analogies output "France," the source country. The model retains the factual association "Paris is to France" but loses the relational transfer "as Berlin is to ___." This is the failure mode predicted if Group 2 implements relational transfer, and it is the strongest single piece of architecture evidence. Group 1 suppression produces a more severe failure, an empty output for the capital prompts, consistent with Group 1 being a prerequisite for Group 2. Together these results indicate an ordered hierarchy: Group 1 (template) precedes Group 2 (relational transfer), which precedes answer retrieval in the later layers.
+All four collective conditions change the baseline first token on all five prompts. Group 2 suppression produces the same first token, "France," for the three capital prompts: the source-pair answer is retained while the target-pair answer is lost. This is the failure pattern expected if the selected Group 2 features contribute to transferring the relation from the demonstrated pair to the query pair. Group 1 suppression produces a leading newline for the capital prompts, while combined Group 1+2 suppression produces a colon for every prompt, showing that the selected groups have distinguishable collective effects.
 
-#### 3.7.4 The Causal Validation Ledger
+The Group 2 SAE features preserve the baseline individually on all three high-confidence capital prompts but change those answers when suppressed together. This supports a distributed-contribution interpretation for the tested Group 2 set. Adding the single Group 3 SAE feature to Group 1+2 changes only the Teacher output, from a colon to "be." Because there is no Group-3-only collective condition, these experiments do not establish Group 3's role, an ordering among groups, or mediation between them.
 
-The interventions above bear on the paper's structural claims with different degrees of strength. Four claims meet the matched-contrast or predicted-failure-mode standard and we regard as demonstrated: that the 180 recurring features drive the analogy rather than ride along with it (§3.7.1); that the effect is not merely deletion of the L0 entity tokens (§3.7.2); that it is not an artifact of the −80 steering magnitude (§3.7.2); and that the circuit is organized into the ordered three-group hierarchy of §3.3, with the four Group 2 features collectively implementing relational transfer (§3.7.3). The dedicated analogy features at layers 5, 8, 9, and 13 participate causally as a group, although individually they are redundant.
+#### 3.7.4 Interpretation and Limits
 
-Two further claims are supported but lack a full matched control. The circuit's collapse signature reproduces on three held-out analogies (§3.7.2) and on the two semantic-role prompts, extending the account across domains; the teacher and bird baselines are weak, however (the model is only 56% and 8% confident at baseline, and on the bird prompt " air" is only marginally the argmax, effectively tied with the blank-filling token " ____"), so cross-domain generalization rests on fewer confident cases than the geographic analogies. Finally, the high-recurrence formal-text features (§3.4) were not steered as a group and appear causally inert, so their role remains descriptive rather than demonstrated.
+The steering experiments support three main interpretations. First, the 180-feature intervention set has a stable behavioral signature: suppression produces the same high-confidence first token across all five defining prompts, three held-out prompts, and the full tested strength range. This is evidence that the set has a reproducible relationship to model behavior across prompts, rather than an effect observed in a single example.
 
-Three bounds should be stated explicitly:
+Second, collective Group 2 suppression produces a more specific failure pattern on the high-confidence capital prompts: each reverts to "France," the answer from the demonstrated pair. Because the target answer is lost while the source-pair answer remains available, this result supports the interpretation that the selected Group 2 SAE features contribute to relational transfer. Their lack of individual effects on these prompts, combined with their collective effect, further suggests that this contribution is distributed across the tested features.
 
-1. **Sufficiency.** We show that the circuit is necessary and fails in the predicted way, but not that it is sufficient to produce the answer in isolation. The single-feature sufficiency probe, which boosts the highest-influence hub, is largely negative, inducing the target only when the target entity is already present in the prompt.
-2. **Surgical necessity.** Because −80 is a strong intervention, single-feature necessity is layer-dependent, so the strongest claims rest on the matched contrast rather than on any individual ablation.
-3. **Mediation.** The group experiments show that each group is collectively necessary, but establishing that information flows along the Group 1 → Group 2 edge requires path patching on the model weights, which the steering API does not expose. This remains future work.
+The evidence does not support stronger exclusivity or sequencing claims. The same-size random-feature condition also changes every baseline answer, so the current comparison does not establish that the 180-feature set is uniquely necessary. The experiments also do not establish sufficiency, a Group 1 -> Group 2 -> Group 3 information-flow path, or a causal role for Group 3. The Teacher and Bird baselines are weaker than the three capital-city baselines (56% and 8%, respectively), so interpretations based on those prompts are less secure.
 
-Within these bounds, the steering evidence supports the paper's central structural claims: a recurring circuit that causally drives the answer across five prompts and three held-out analogies, not reducible to token deletion or to the intervention magnitude, organized into the three groups of §3.3, and shared between geographic and semantic-role analogies.
+The results therefore provide evidence for reproducible set-level effects and for a contribution of the selected Group 2 SAE features to relational transfer, while leaving circuit specificity and group-level mediation unresolved. Stronger mechanistic claims will require a control that preserves baseline behavior more reliably, lower-magnitude interventions that reveal differential sensitivity, and experiments that isolate Group 3 and test mediation between groups.
 
 ---
 
@@ -504,13 +497,13 @@ Within these bounds, the steering evidence supports the paper's central structur
 
 ### 4.1 The Analogical Reasoning Circuit in Gemma-2-2B
 
-**Overall synthesis.** The results establish that Gemma-2-2B performs analogical reasoning through a stable, three-group distributed circuit rather than any single mechanism or layer. The convergence of structural, semantic, and causal evidence — across 218 steering experiments, a 50-prompt scaling study, cross-domain generalization testing, and held-out analogies — provides a mechanistic account at a level of specificity and causal resolution that prior behavioral work on LLM analogical reasoning could not reach. The core argument of this paper is not merely that recurring features exist, but that the recurring features identified through graph overlap are causally load-bearing, and that different groups of the circuit play functionally distinct and experimentally separable roles.
+**Overall synthesis.** The results identify a stable set of recurring SAE features associated with analogical prompts and organize selected representatives into three functional groups. Across 218 steering experiments, a 50-prompt scaling study, cross-domain testing, and held-out analogies, the same feature sets and intervention-output patterns recur across multiple prompts. Taken together, these results support a distributed representation of analogical structure that generalizes across the tested prompts and domains. The strongest functional evidence comes from collective Group 2 suppression, which causes the capital prompts to retain the demonstrated answer "France" while losing the transferred target answer. This is consistent with Group 2 contributing to relational transfer. The failed random-feature control limits claims of circuit specificity, and the group experiments do not establish an ordered three-stage computation.
 
-**The three-group architecture in context.** The three-group organization — structural template parsing (L0–L4), analogy recognition (L5–L9), and relational integration (L10–L13) — mirrors the abstract reasoning architecture documented by Webb et al. [9] through causal mediation analysis, where early layers abstract tokens into relational variables, intermediate layers perform induction over those variables, and later layers retrieve answers. The present results extend that framework in two important ways: by identifying specific SAE features at each group rather than working at the attention head level, and by providing direct causal evidence through feature steering that each group is collectively necessary for the circuit to function. Crucially, the group boundaries were not imposed a priori — they emerged from the content of Neuronpedia automated labels naturally clustering by layer depth, with a convergent gradient in activation magnitudes — rising from 1.5–6.4 in Group 1 to 9.1–16.3 in Group 3 (§2.4) — confirming the same partition through a second independent line of evidence.
+**The three-group organization in context.** The proposed groups — structural-template features concentrated at L0–L4, analogy-related features concentrated at L5–L9, and comparison-related features concentrated at L10–L13 — parallel the abstract reasoning architecture documented by Webb et al. [9]. The label progression and the distinct collective-suppression outputs support the idea that different parts of the recurring feature set make functionally different contributions. In particular, Group 2's source-answer failure pattern connects its analogy-related labels to a measurable behavioral role. Group 3 was represented by one SAE feature and was not isolated in a Group-3-only collective condition, so the experiments do not establish that all three groups are collectively necessary or that computation proceeds through them in order.
 
-This is qualitatively distinct from multi-hop factual reasoning. Analogical reasoning requires extracting an unnamed relation type, holding it as a variable, and applying it to a new argument pair. The Group 2 collective suppression experiment demonstrates that this extraction and transfer are implemented by identifiable internal components whose removal causes the model to echo the source-pair answer rather than transfer the relation — consistent with the "missing relational information" failure mode documented by Lee et al. [10] at the behavioral level. Our work provides a feature-level causal account of this phenomenon.
+This is qualitatively distinct from multi-hop factual reasoning. Analogical reasoning requires extracting an unnamed relation type and applying it to a new argument pair. Under collective Group 2 suppression, the model retains the source-pair answer but fails to produce the transferred target answer. This is consistent with the "missing relational information" failure mode documented by Lee et al. [10] and provides feature-level evidence that the selected Group 2 SAE features contribute to relational transfer.
 
-Prior behavioral evidence [1] established that LLMs can match human performance on analogical tasks; Webb et al. [9] identified emergent symbolic mechanisms supporting abstract reasoning through causal mediation of attention heads. The present work extends these findings to the SAE feature level: the relational reasoning primitive is not just a pattern of attention head behavior but a specifically labeled feature that plays a causal role in the SAE's learned decomposition of residual stream activations.
+Prior behavioral evidence [1] established that LLMs can match human performance on analogical tasks; Webb et al. [9] identified emergent symbolic mechanisms supporting abstract reasoning through causal mediation of attention heads. The present work extends this line of investigation to SAE features by identifying recurring, explicitly analogy-labeled features and showing that their collective suppression produces a relation-specific failure pattern. This connects interpretable SAE labels to behavior while leaving the precise causal pathway for future work.
 
 ### 4.2 Circuit Stability Across Scaling and Surface Forms
 
@@ -526,7 +519,7 @@ The high-recurrence "code and legal text" features present an interpretive puzzl
 
 **Training data hypothesis:** The analogy format appears frequently in SAT preparation and educational materials — which also contain code examples and legal definitions — creating a statistical association between formal-text features and analogy-completion contexts.
 
-Both are compatible with the causal steering data. The formal features process the syntactic surface of the template while the analogy features process the relational semantics; only the latter are collectively necessary for relational transfer. The SAE-based decomposition [5, 6] is what makes this functional distinction visible — raw neuron activations would not cleanly separate these roles.
+Both hypotheses are compatible with the observed feature labels and recurrence patterns. The contrast between the highly recurring formal-text labels and the more interpretable Group 2 suppression result suggests that recurrence alone does not determine causal importance. The current steering experiments do not distinguish whether the formal-text features reflect reusable template processing or training-data correlations, so those proposed roles remain hypotheses.
 
 ### 4.4 Comparison with the Capital City Recall Circuit
 
@@ -537,11 +530,11 @@ Comparison with the capital city *factual recall* circuit (prompt: "The capital 
 
 ### 4.5 Relation to Anthropic's Attribution Graph Methodology
 
-The present work is in direct methodological continuity with Anthropic's *On the Biology of a Large Language Model* [12], which applied attribution graphs to Claude 3.5 Haiku using cross-layer transcoders. Both papers find that models implement multi-step, staged computation rather than direct input-to-output pattern matching, and both validate circuit hypotheses through feature steering. Anthropic's paper groups related features into manually curated "supernodes" to present a cleaner narrative; the present work uses automated cross-graph intersection, which is more scalable and less susceptible to confirmation bias but produces a less narratively refined picture of any single circuit. The two approaches are complementary.
+The present work follows the attribution-graph methodology used in Anthropic's *On the Biology of a Large Language Model* [12], which studied Claude 3.5 Haiku using cross-layer transcoders. Anthropic's paper groups related features into manually curated "supernodes"; the present work instead uses automated cross-graph intersection to identify recurring SAE features. The resulting graphs and steering measurements characterize associations and intervention sensitivity, while stronger claims about staged computation require additional causal tests.
 
-### 4.6 Redundancy as a Property of Well-Learned Computation
+### 4.6 Evidence for Distributed Contribution
 
-Single-feature ablation of the 180-feature circuit leaves the Berlin prediction intact in 156/180 cases (§3.7.1): necessity is a property of the *set*, not of most individual members, and the few individually necessary features concentrate at the embedding layer. Yet the circuit is collectively decisive — removing it collapses every prompt to the analogy template, while a size- and strength-matched random ablation does not. This combination — individually redundant, collectively necessary — suggests well-learned associations are protected by redundant parallel encodings rather than single critical features. It aligns with the circuit redundancy findings in [12] and may reflect a general property of how transformers distribute robust computations across many partially-redundant components.
+Single-feature suppression leaves the Berlin prediction intact in 156 of 180 cases, whereas collective suppression of all 180 SAE features changes the first-token prediction on every prompt (§3.7.1). A similar pattern appears within Group 2: no selected Group 2 SAE feature changes the three high-confidence capital answers individually, but suppressing all four changes all three answers to "France." These results are consistent with distributed or redundant contribution, where a set can influence behavior even when most members are not individually necessary. The conclusion remains provisional because the collective interventions are much larger and the same-size random-feature condition also changes every baseline answer. Confirming redundancy will require controls that preserve baseline behavior and experiments designed to measure feature interactions directly.
 
 ---
 
@@ -554,8 +547,8 @@ Single-feature ablation of the 180-feature circuit leaves the Berlin prediction 
 3. **Threshold sensitivity.** Results are sensitive to node and edge thresholds (0.80/0.85). Lower thresholds would reveal more features; higher thresholds would produce sparser, more focused circuits.
 4. **Label quality.** Neuronpedia [8] automated feature explanations are LLM-generated and may not perfectly capture feature semantics.
 5. **Prompt set size.** Five defining prompts (plus three held-out) are sufficient for circuit identification and a generalization check but too few to claim statistical robustness. A larger prompt set covering arithmetic, cross-lingual, and abstract relational analogies [13] would strengthen conclusions.
-6. **Sufficiency not established.** The steering evidence shows the circuit is necessary and fails in the predicted way, but not that it is *sufficient* to produce the answer in isolation. The single-feature sufficiency probe is largely negative — the highest-influence hub induces the target only when the target entity is already present in the prompt.
-7. **Large-magnitude intervention.** Steering at effective −80 per feature is a strong perturbation; the strongest claims rest on the circuit-vs-matched-null contrast and on the strength titration (the effect is already present at effective −8), not on any single surgical ablation. Establishing edge-level mediation (Group 1 → Group 2) requires activation/path patching on the model weights, which the steering API does not expose.
+6. **Sufficiency not established.** The reported suppression experiments do not test whether the selected SAE features are sufficient to produce an answer. The separate single-feature boosting probe is largely negative and does not establish sufficiency.
+7. **Large-magnitude intervention and ineffective negative control.** Steering at an effective −80 per SAE feature is a strong perturbation, and the same-size random-feature condition also removes every baseline answer. The strength sweep reproduces the intervention output down to effective −8 but does not locate a differential threshold between the selected and random feature sets. Establishing specificity and edge-level mediation will require less disruptive controls and activation or path patching on the model weights.
 
 **Future work:** activation patching at the attention head level, replication with benchmark prompt sets, and cross-model comparison.
 
@@ -565,14 +558,14 @@ Single-feature ablation of the 180-feature circuit leaves the Berlin prediction 
 
 ## 6. Conclusions
 
-We have identified a shared analogical reasoning circuit in Gemma-2-2B comprising 119 features active across five initial prompts, converging to a stable 67-feature core across 50 prompts phrased in four syntactically distinct surface forms. The circuit is organized into three groups: Group 1 (L0–L4) parses the structural format of the analogy prompt; Group 2 (L5–L9) recognises the relational concept itself through features explicitly labeled "analogies" and "analogies or comparisons"; and Group 3 (L10–L13) integrates the relation with domain-specific knowledge. The same core features activate for both geographic capital analogies and semantic role analogies, confirming a domain-agnostic relational reasoning mechanism rather than separate topic-specific circuits.
+We identified 119 SAE features active across five initial analogy prompts and a 67-feature intersection across 50 prompts phrased in four surface forms. Automated labels for selected features cluster into three groups: structural-template labels concentrated at L0–L4, analogy-related labels concentrated at L5–L9, and comparison-related labels concentrated at L10–L13. The recurrence of these features across geographic and semantic-role prompts supports a shared representation of analogical structure across the tested domains. Steering provides additional functional evidence: the 180-feature intervention set has a stable cross-prompt signature, and collective Group 2 suppression produces the source-pair answer on all three capital prompts.
 
 1. **A stable shared circuit exists, identified by common feature IDs.** 119 features — identified by stable *(layer, feature index)* pairs — appear in all five independently generated attribution graphs.
 2. **Dedicated analogy features exist at layers 5, 8, 9, and 13.** These features have Neuronpedia explanations explicitly referencing analogies, comparisons, and relational concepts — providing direct SAE-level evidence of interpretable analogy-concept features in a large language model.
-3. **The circuit exhibits a three-group architecture, identified by label semantics and validated causally.** Circuit template parsing (L0–L4), analogy recognition (L5–L9), and relational integration (L10–L13), with activation magnitude increasing through the sequence.
-4. **Cross-domain generalization is confirmed.** The same core features, including L5 SAE#5793 ("analogies"), activate for both geographic and semantic role analogies — a domain-agnostic relational reasoning primitive consistent with behavioral findings [1, 10, 11].
-5. **Group 2 implements relational transfer, collectively but not individually.** Simultaneous suppression collapses every circuit; capital analogies revert to the source-pair answer.
-6. **The validation is robust to the obvious confounds.** Ablating the circuit — but not a matched random control — collapses all five prompts to the analogy template; the effect survives excluding the embedding layer (so it is not mere token deletion), holds from the weakest steering strength tested, and reproduces on held-out analogies the circuit was never derived from. Sufficiency and edge-level mediation remain open (§5).
+3. **The recurring SAE features can be organized into three label-based groups.** Structural-template labels concentrate at L0–L4, analogy-related labels at L5–L9, and comparison-related labels at L10–L13. Distinct collective-suppression outputs support functionally different contributions, although the current interventions do not establish an ordered three-stage computation.
+4. **The feature intersection spans both tested domains.** The same core features, including SAE L5/F5793 ("analogies"), appear in both geographic and semantic-role analogy graphs. This recurrence supports a shared representation across the tested domains, while broader domain generality remains to be tested.
+5. **Group 2 contributes to relational transfer.** Collective suppression changes all five baseline answers, and the three capital-city prompts revert to "France," retaining the demonstrated pair's answer while losing the transferred target answer. The result supports a Group 2 contribution but not exclusive implementation of the operation.
+6. **The intervention signature generalizes, but specificity remains unresolved.** Suppressing the 180-feature set produces "to" across the five defining prompts, the tested strength range, and three held-out prompts, demonstrating a reproducible set-level effect. The same-size random-feature condition also changes every baseline answer, so a claim of unique circuit necessity requires a less disruptive control (§5).
 
 ---
 
@@ -647,7 +640,7 @@ https://kkrampis.github.io/autocircuit/presentation.html
 @article{alagbe2026analogical,
   title   = {Mechanistic Interpretability of Analogical Reasoning in {Gemma-2-2B}:
              A Sparse Autoencoder Attribution Graph Analysis},
-  author  = {Alagbe, Olalekan and Lawrence, Joseph and Maheshwar, Anish and Krampis, Konstantinos},
+  author  = {Alagbe, Olalekan and Lawrence, Joseph and Krampis, Konstantinos},
   year    = {2026},
   month   = {March},
   note    = {Neuronpedia API \texttt{gemmascope-transcoder-16k} SAE analysis}

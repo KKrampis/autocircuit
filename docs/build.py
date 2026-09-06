@@ -67,30 +67,25 @@ FIGURES["fig-layer-distribution"] = """
 
 FIGURES["fig-circuit-flow"] = """
 <div style="max-width:560px;margin:0 auto;">
-  <div class="phase-input">"Paris is to France as Berlin is to ___"</div>
-  <div class="phase-arrow">&#8595;</div>
+  <div class="phase-input">Representative recurring SAE features</div>
   <div class="phase-box phase-1">
-    <div class="phase-label phase-label-1">Phase 1 &middot; Layers 0&#x2013;4 &middot; Structural Template Parsing</div>
-    <div class="phase-feature"><strong>L0 #11651</strong> &mdash; <em>"the word 'to'"</em></div>
-    <div class="phase-feature"><strong>L1 #11356</strong> &mdash; <em>"the word 'to' followed by a verb"</em></div>
-    <div class="phase-feature"><strong>L4 #10752</strong> &mdash; <em>"uses of the verb 'to be' preceded by 'to'"</em></div>
-    <div class="phase-feature"><strong>L5 #9672</strong> &mdash; <em>"the phrase 'it is to'"</em></div>
+    <div class="phase-label phase-label-1">Group 1 &middot; Concentrated at layers 0&#x2013;4 &middot; Template-word labels</div>
+    <div class="phase-feature"><strong>SAE L0/F11651</strong> &mdash; <em>"the word 'to'"</em></div>
+    <div class="phase-feature"><strong>SAE L1/F11356</strong> &mdash; <em>"the word 'to' followed by a verb"</em></div>
+    <div class="phase-feature"><strong>SAE L4/F10752</strong> &mdash; <em>"uses of the verb 'to be' preceded by 'to'"</em></div>
+    <div class="phase-feature"><strong>SAE L5/F9672</strong> &mdash; <em>"the phrase 'it is to'"</em></div>
   </div>
-  <div class="phase-arrow">&#8595;</div>
   <div class="phase-box phase-2">
-    <div class="phase-label phase-label-2">Phase 2 &middot; Layers 5&#x2013;9 &middot; Analogy Recognition Hub &#9733;</div>
-    <div class="phase-feature"><strong>L5 #5793</strong> &mdash; <em><span class="smoking-gun">"analogies"</span></em> &nbsp;&#8592; dedicated analogy concept feature</div>
-    <div class="phase-feature"><strong>L5 #2141</strong> &mdash; <em>"comparisons of well-known figures"</em></div>
-    <div class="phase-feature"><strong>L8 #13766</strong> &mdash; <em>"analogies or comparisons"</em></div>
-    <div class="phase-feature"><strong>L9 #13344</strong> &mdash; <em>"comparison between two things"</em></div>
+    <div class="phase-label phase-label-2">Group 2 &middot; Concentrated at layers 5&#x2013;9 &middot; Analogy-related labels</div>
+    <div class="phase-feature"><strong>SAE L5/F5793</strong> &mdash; <em><span class="smoking-gun">"analogies"</span></em></div>
+    <div class="phase-feature"><strong>SAE L5/F2141</strong> &mdash; <em>"comparisons of well-known figures"</em></div>
+    <div class="phase-feature"><strong>SAE L8/F13766</strong> &mdash; <em>"analogies or comparisons"</em></div>
+    <div class="phase-feature"><strong>SAE L9/F13344</strong> &mdash; <em>"comparison between two things"</em></div>
   </div>
-  <div class="phase-arrow">&#8595;</div>
   <div class="phase-box phase-3">
-    <div class="phase-label phase-label-3">Phase 3 &middot; Layers 10&#x2013;13 &middot; Relational Integration</div>
-    <div class="phase-feature"><strong>L13 #10969</strong> &mdash; <em>"comparisons between disciplines and relationships between concepts"</em></div>
+    <div class="phase-label phase-label-3">Group 3 &middot; Concentrated at layers 10&#x2013;13 &middot; Relationship-related labels</div>
+    <div class="phase-feature"><strong>SAE L13/F10969</strong> &mdash; <em>"comparisons between disciplines and relationships between concepts"</em></div>
   </div>
-  <div class="phase-arrow">&#8595;</div>
-  <div class="phase-output">Output: "Germany" &nbsp;/&nbsp; "school" &nbsp;/&nbsp; "air"</div>
 </div>"""
 
 FIGURES["fig-venn"] = """

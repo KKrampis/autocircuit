@@ -7,8 +7,6 @@ authors:
     url: "https://www.linkedin.com/in/olalekanjoshuaalagbe1000/"
   - name: "Joseph Lawrence"
     url: ""
-  - name: "Anish Maheshwar"
-    url: ""
   - name: "Konstantinos Krampis"
     url: "https://www.linkedin.com/in/kkrampis/"
 ---

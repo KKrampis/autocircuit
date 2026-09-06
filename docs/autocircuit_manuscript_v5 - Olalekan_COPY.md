@@ -1,6 +1,6 @@
 # Interpretability of Analogical Reasoning in Gemma-2-2B: An Attribution Graph Analysis
 
-**Olalekan Alagbe · Joseph Lawrence · Anish Maheshwar · Konstantinos Krampis**
+**Olalekan Alagbe · Joseph Lawrence · Konstantinos Krampis**
 
 *Mechanistic Interpretability · March 2026*
 
@@ -450,7 +450,7 @@ We have identified and characterized the analogical reasoning circuit in Gemma-2
 @article{alagbe2026analogical,
   title   = {Mechanistic Interpretability of Analogical Reasoning in {Gemma-2-2B}:
              A Sparse Autoencoder Attribution Graph Analysis},
-  author  = {Alagbe, Olalekan and Lawrence, Joseph and Maheshwar, Anish and Krampis, Konstantinos},
+  author  = {Alagbe, Olalekan and Lawrence, Joseph and Krampis, Konstantinos},
   year    = {2026},
   month   = {March},
   note    = {Neuronpedia API \texttt{gemmascope-transcoder-16k} SAE analysis}
@@ -478,5 +478,4 @@ The figures below show L9 SAE#13344 and L8 SAE#13766 as they appear inside the N
 ![13766 — paris is to france as tokyo is to](UI-GRAPHS/13766_paris-is-to-france-as-tokyo-is-to.png)
 ![13766 — doctor is to hospital as teacher is to](UI-GRAPHS/13766_doctor-is-to-hospital-as-teacher-is-to.png)
 ![13766 — fish is to water as bird is to](UI-GRAPHS/13766_fish-is-to-water-as-bird-is-to.png)
-
 

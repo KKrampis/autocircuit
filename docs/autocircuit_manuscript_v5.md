@@ -1,6 +1,6 @@
 # Interpretability of Analogical Reasoning in Gemma-2-2B: An Attribution Graph Analysis
 
-**Olalekan Alagbe · Joseph Lawrence · Anish Maheshwar · Konstantinos Krampis**
+**Olalekan Alagbe · Joseph Lawrence · Konstantinos Krampis**
 
 *Mechanistic Interpretability · March 2026*
 
@@ -389,7 +389,7 @@ We have identified and characterized the **analogical reasoning circuit in Gemma
 @article{alagbe2026analogical,
   title   = {Mechanistic Interpretability of Analogical Reasoning in {Gemma-2-2B}:
              A Sparse Autoencoder Attribution Graph Analysis},
-  author  = {Alagbe, Olalekan and Lawrence, Joseph and Maheshwar, Anish and Krampis, Konstantinos},
+  author  = {Alagbe, Olalekan and Lawrence, Joseph and Krampis, Konstantinos},
   year    = {2026},
   month   = {March},
   note    = {Neuronpedia API \texttt{gemmascope-transcoder-16k} SAE analysis}
