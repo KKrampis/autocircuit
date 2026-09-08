@@ -1,0 +1,291 @@
+{
+  "scope": "objective graph metrics only; no semantic phase labels",
+  "prompt_names": [
+    "analog_berlin",
+    "analog_bird",
+    "analog_rome",
+    "analog_teacher",
+    "analog_tokyo"
+  ],
+  "metric_names": [
+    "log_unique_feature_count",
+    "median_influence",
+    "log_median_activation",
+    "mean_contexts_per_feature"
+  ],
+  "normalization": "within-prompt z-score for each metric",
+  "minimum_segment_size": 3,
+  "candidate_piecewise_models": [
+    {
+      "n_boundaries": 0,
+      "n_phases": 1,
+      "boundaries": [],
+      "segments": [
+        [
+          0,
+          25
+        ]
+      ],
+      "rss": 85.38606292933834,
+      "bic": -1.9320693616643894,
+      "leave_one_prompt_out_loss": 1.0
+    },
+    {
+      "n_boundaries": 1,
+      "n_phases": 2,
+      "boundaries": [
+        10
+      ],
+      "segments": [
+        [
+          0,
+          9
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "rss": 41.47841821693895,
+      "bic": -53.79911752221368,
+      "leave_one_prompt_out_loss": 0.5820659692478717
+    },
+    {
+      "n_boundaries": 2,
+      "n_phases": 3,
+      "boundaries": [
+        7,
+        15
+      ],
+      "segments": [
+        [
+          0,
+          6
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          15,
+          25
+        ]
+      ],
+      "rss": 27.221504058284676,
+      "bic": -74.37842678460018,
+      "leave_one_prompt_out_loss": 0.47666202089538023
+    },
+    {
+      "n_boundaries": 3,
+      "n_phases": 4,
+      "boundaries": [
+        3,
+        7,
+        15
+      ],
+      "segments": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          15,
+          25
+        ]
+      ],
+      "rss": 22.628148386664307,
+      "bic": -70.37698437490238,
+      "leave_one_prompt_out_loss": 0.45197297053281293
+    },
+    {
+      "n_boundaries": 4,
+      "n_phases": 5,
+      "boundaries": [
+        7,
+        14,
+        18,
+        22
+      ],
+      "segments": [
+        [
+          0,
+          6
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          18,
+          21
+        ],
+        [
+          22,
+          25
+        ]
+      ],
+      "rss": 18.463281536888882,
+      "bic": -68.30973821879287,
+      "leave_one_prompt_out_loss": 0.4214203254443551
+    }
+  ],
+  "bic_selected_model": {
+    "n_boundaries": 2,
+    "n_phases": 3,
+    "boundaries": [
+      7,
+      15
+    ],
+    "segments": [
+      [
+        0,
+        6
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        15,
+        25
+      ]
+    ],
+    "rss": 27.221504058284676,
+    "bic": -74.37842678460018,
+    "leave_one_prompt_out_loss": 0.47666202089538023
+  },
+  "cross_validation_selected_model": {
+    "n_boundaries": 4,
+    "n_phases": 5,
+    "boundaries": [
+      7,
+      14,
+      18,
+      22
+    ],
+    "segments": [
+      [
+        0,
+        6
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        14,
+        17
+      ],
+      [
+        18,
+        21
+      ],
+      [
+        22,
+        25
+      ]
+    ],
+    "rss": 18.463281536888882,
+    "bic": -68.30973821879287,
+    "leave_one_prompt_out_loss": 0.4214203254443551
+  },
+  "smooth_polynomial_controls": [
+    {
+      "degree": 1,
+      "rss": 40.384487154823525,
+      "bic": -61.223170406811946,
+      "n_parameters": 8,
+      "leave_one_prompt_out_loss": 0.5717020559341041
+    },
+    {
+      "degree": 2,
+      "rss": 24.18192958840337,
+      "bic": -95.98097584776312,
+      "n_parameters": 12,
+      "leave_one_prompt_out_loss": 0.4217244998430868
+    },
+    {
+      "degree": 3,
+      "rss": 19.856986669432203,
+      "bic": -97.89658360290744,
+      "n_parameters": 16,
+      "leave_one_prompt_out_loss": 0.38589409476031944
+    }
+  ],
+  "overall_bic_selected_model": {
+    "family": "smooth_polynomial",
+    "name": "degree-3",
+    "bic": -97.89658360290744
+  },
+  "bootstrap": {
+    "samples": 1000,
+    "bic_selected_boundary_count_frequency": {
+      "2": 657,
+      "3": 89,
+      "4": 254
+    },
+    "fixed_bic_model_boundary_frequency_top_10": [
+      {
+        "boundaries": [
+          7,
+          15
+        ],
+        "count": 370
+      },
+      {
+        "boundaries": [
+          7,
+          14
+        ],
+        "count": 283
+      },
+      {
+        "boundaries": [
+          8,
+          15
+        ],
+        "count": 199
+      },
+      {
+        "boundaries": [
+          7,
+          17
+        ],
+        "count": 76
+      },
+      {
+        "boundaries": [
+          7,
+          18
+        ],
+        "count": 53
+      },
+      {
+        "boundaries": [
+          8,
+          17
+        ],
+        "count": 10
+      },
+      {
+        "boundaries": [
+          8,
+          18
+        ],
+        "count": 9
+      }
+    ]
+  }
+}

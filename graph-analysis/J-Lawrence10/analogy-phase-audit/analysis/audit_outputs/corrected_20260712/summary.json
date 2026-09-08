@@ -1,0 +1,44 @@
+{
+  "graph_summaries": {
+    "analog_berlin": {
+      "nodes": 930,
+      "links": 25915,
+      "prompt": "Paris is to France as Berlin is to"
+    },
+    "analog_rome": {
+      "nodes": 963,
+      "links": 27608,
+      "prompt": "Paris is to France as Rome is to"
+    },
+    "analog_tokyo": {
+      "nodes": 905,
+      "links": 22414,
+      "prompt": "Paris is to France as Tokyo is to"
+    },
+    "analog_teacher": {
+      "nodes": 1040,
+      "links": 35481,
+      "prompt": "Doctor is to hospital as teacher is to"
+    },
+    "analog_bird": {
+      "nodes": 1071,
+      "links": 38741,
+      "prompt": "Fish is to water as bird is to"
+    }
+  },
+  "original_occurrence_threshold_counts_on_fresh_graphs": {
+    "3": 510,
+    "4": 277,
+    "5": 180
+  },
+  "corrected_distinct_graph_counts_on_fresh_graphs": {
+    "3": 490,
+    "4": 210,
+    "5": 119
+  },
+  "inflation": {
+    "3": 20,
+    "4": 67,
+    "5": 61
+  }
+}
